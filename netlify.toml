@@ -1,0 +1,82 @@
+[build]
+  publish = "src"
+  command = ""
+  functions = "functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# SPA Redirects
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Cache CSS & JS
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Short-lived HTML cache
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/html; charset=utf-8"
+
+# Images
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Fonts
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# API responses
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Access-Control-Allow-Origin = "*"
+
+# Sitemap & Robots
+[[headers]]
+  for = "/{sitemap.xml,robots.txt}"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Context: Production
+[context.production]
+  command = ""
+  environment = {SITE_NAME = "n8de.me"}
+
+# Context: Deploy preview
+[context.deploy-preview]
+  command = ""
+  environment = {SITE_NAME = "n8de.me (Preview)"}
+
+# Context: Branch deploy
+[context.branch-deploy]
+  command = ""
+  environment = {SITE_NAME = "n8de.me (Branch)"}

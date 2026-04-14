@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — n8de.me</title>
+  <meta name="description" content="Contactez n8de.me pour discuter de votre projet automation.">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="pages/contact.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="container flex-between">
+      <div class="logo">n8de.me</div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#offers">Offres</a></li>
+        <li><a href="about.html">À Propos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Contact -->
+  <section class="contact-section">
+    <div class="container">
+      <h1 class="text-center">Parlons de votre projet.</h1>
+      <p class="subtitle text-center">Remplissez le formulaire ou écrivez directement à <strong>kevin@n8de.me</strong></p>
+
+      <div class="contact-container">
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Votre nom *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Votre email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Entreprise *</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+
+          <div class="form-group">
+            <label for="niche">Secteur d'activité *</label>
+            <select id="niche" name="niche" required>
+              <option value="">-- Choisir --</option>
+              <option value="restaurant">Restaurant / Café</option>
+              <option value="pme">PME (Services)</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Décrivez votre besoin automation..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-full">Envoyer</button>
+        </form>
+
+        <div class="contact-info">
+          <h3>Infos de contact</h3>
+          <div class="info-item">
+            <strong>Email</strong>
+            <a href="mailto:kevin@n8de.me">kevin@n8de.me</a>
+          </div>
+          <div class="info-item">
+            <strong>LinkedIn</strong>
+            <a href="https://linkedin.com/in/kevin-forma" target="_blank">Kevin Forma</a>
+          </div>
+          <div class="info-item">
+            <strong>Twitter</strong>
+            <a href="https://twitter.com/n8deme" target="_blank">@n8deme</a>
+          </div>
+          <div class="info-item">
+            <strong>Localisation</strong>
+            <p>Belgique (Bruxelles)</p>
+          </div>
+          
+          <div class="response-time">
+            <p>⏱️ Réponse en &lt; 2 heures (lun-ven 9h-18h CET)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 n8de.me. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
