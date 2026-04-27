@@ -3,27 +3,30 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Blog — n8de.me</title>
-<meta name="description" content="Articles, études de cas et retours d'expérience sur l'automatisation n8n pour restaurants, PME et e-commerce." />
+<title>Jarvis — L'assistant IA WhatsApp pour restaurants | n8de.me</title>
+<meta name="description" content="Vos managers passent 3h par jour à répondre aux mêmes questions de l'équipe. Jarvis répond à leur place via WhatsApp. À partir de 99€/mois." />
 
-<meta property="og:title" content="Blog — n8de.me" />
-<meta property="og:description" content="Articles, études de cas et retours d'expérience sur l'automatisation n8n." />
+<meta property="og:title" content="Jarvis — L'assistant IA WhatsApp pour restaurants" />
+<meta property="og:description" content="3h économisées par jour pour vos managers. Votre équipe pose ses questions, Jarvis répond." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://n8de.me/fr/jarvis.html" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ============ TOKENS ============ */
+/* ============ DESIGN TOKENS — sync avec le site ============ */
 :root {
   --bg: #000000;
   --bg-elev: #0a0a0a;
   --bg-card: #0f0f10;
+  --bg-card-hover: #15151a;
   --border: #1a1a1d;
   --border-strong: #2a2a2f;
 
   --orange: #FF6B00;
+  --orange-soft: #FF8A33;
   --gold: #F5A623;
   --gold-soft: #FFC56B;
 
@@ -48,588 +51,442 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.55;
-  font-weight: 400;
-  overflow-x: hidden;
+  font-feature-settings: 'ss01';
   -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
-img, svg { max-width: 100%; display: block; }
+
+::selection { background: var(--orange); color: var(--bg); }
+
+img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 
-::selection { background: var(--orange); color: #000; }
-
-.container {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding-left: var(--pad);
-  padding-right: var(--pad);
-}
-
-section { padding: clamp(60px, 10vw, 120px) 0; position: relative; }
-
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--orange);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 24px;
-}
-.eyebrow::before {
-  content: '';
-  width: 24px; height: 1px;
-  background: var(--orange);
-}
-
-h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; }
-h2 { font-size: clamp(38px, 6vw, 72px); margin-bottom: 24px; }
-h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 500; }
-
-.section-lead {
-  font-size: clamp(16px, 1.4vw, 18px);
-  color: var(--text-dim);
-  max-width: 640px;
-  margin-bottom: 48px;
-}
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
 
 /* ============ NAV ============ */
 .nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 18px 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
-  transition: border-color .3s ease, background .3s ease;
-}
-.nav.scrolled { border-bottom-color: var(--border); background: rgba(0,0,0,0.85); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-.logo { display: flex; align-items: center; gap: 12px; font-family: var(--sans); font-weight: 700; font-size: 18px; letter-spacing: 0.04em; }
-.logo-img { height: 80px; width: auto; display: block; }
-.footer-brand .logo-img { height: 140px; max-width: 100%; }
-.footer-brand { display: flex; align-items: flex-start; }
-.logo { gap: 0; }
-
-.nav-links { display: flex; align-items: center; gap: 36px; font-size: 14px; font-weight: 500; }
-.nav-links a { color: var(--text-dim); transition: color .2s; }
-.nav-links a:hover { color: var(--text); }
-
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 12px 22px; border-radius: 999px;
-  font-size: 14px; font-weight: 600;
-  transition: transform .2s, background .2s, color .2s, border-color .2s;
-  white-space: nowrap;
-}
-.btn-primary { background: var(--orange); color: #000; }
-.btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
-.btn-ghost { border: 1px solid var(--border-strong); color: var(--text); background: transparent; }
-.btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
-.btn svg { width: 14px; height: 14px; }
-
-.menu-toggle { display: none; }
-
-/* ============ PAGE HEADER ============ */
-.page-header {
-  padding-top: 180px;
-  padding-bottom: 40px;
-  position: relative;
-  overflow: hidden;
-}
-.page-header::before {
-  content: ''; position: absolute; inset: 0;
-  background:
-    radial-gradient(900px 500px at 80% 10%, rgba(255,107,0,0.12), transparent 60%),
-    radial-gradient(600px 400px at 10% 90%, rgba(245,166,35,0.08), transparent 60%);
-  pointer-events: none;
-}
-.page-header-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
-  pointer-events: none;
-}
-.page-header-inner { position: relative; z-index: 2; }
-.page-header h1 {
-  font-size: clamp(56px, 9vw, 120px);
-  font-weight: 300;
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-  font-style: italic;
-  margin-bottom: 32px;
-}
-.page-header h1 em {
-  font-style: italic; font-weight: 400;
-  background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 60%, var(--gold-soft) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.page-header .lead {
-  font-size: clamp(17px, 1.6vw, 21px);
-  color: var(--text-dim);
-  max-width: 680px;
-  line-height: 1.6;
-}
-
-/* ============ CATEGORIES ============ */
-.cat-bar {
-  padding: 24px 0 60px;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--border);
 }
-.cat-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  list-style: none;
-  padding: 0;
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { display: inline-flex; align-items: center; }
+.logo-img { height: 80px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: 14px; color: var(--text-dim); transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.lang-switch { display: inline-flex; align-items: center; gap: 8px; padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; }
+.lang-switch a { font-family: var(--mono); font-size: 11px; color: var(--text-mute); }
+.lang-switch a.active { color: var(--orange); }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 999px;
+  font-family: var(--sans); font-weight: 500; font-size: 14px;
+  border: 1px solid transparent; cursor: pointer; transition: all 0.2s;
 }
-.cat {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--border-strong);
-  color: var(--text-dim);
-  transition: border-color .2s, color .2s, background .2s;
-  cursor: pointer;
+.btn-primary { background: var(--orange); color: var(--bg); }
+.btn-primary:hover { background: var(--orange-soft); transform: translateY(-1px); }
+.btn-ghost { border-color: var(--border-strong); color: var(--text); }
+.btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+.btn svg { width: 14px; height: 14px; }
+.menu-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 8px; }
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+  display: block; width: 22px; height: 2px; background: var(--text); position: relative;
 }
-.cat:hover, .cat.active { border-color: var(--orange); color: var(--orange); background: rgba(255,107,0,0.05); }
+.menu-toggle span::before { content: ''; position: absolute; top: -7px; }
+.menu-toggle span::after { content: ''; position: absolute; top: 7px; }
 
-/* ============ FEATURED ============ */
-.featured {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-.featured-card {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: border-color .3s;
-}
-.featured-card:hover { border-color: var(--orange); }
-.featured-visual {
-  background: linear-gradient(135deg, rgba(255,107,0,0.25) 0%, rgba(245,166,35,0.12) 100%);
-  position: relative;
-  min-height: 380px;
-  overflow: hidden;
-}
-.featured-visual::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-.featured-visual-tag {
-  position: absolute;
-  top: 28px; left: 28px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(8px);
-}
-.featured-visual-number {
-  position: absolute;
-  bottom: 28px; left: 28px; right: 28px;
-  font-family: var(--display);
-  font-style: italic;
-  font-size: clamp(56px, 8vw, 96px);
-  line-height: 0.95;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-.featured-body {
-  background: var(--bg);
-  padding: 48px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.featured-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-mute);
-  margin-bottom: 24px;
-}
-.featured-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-mute); }
-.featured-meta .cat-badge {
-  color: var(--orange);
-  border: 1px solid var(--border-strong);
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-.featured-body h2 {
-  font-family: var(--display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(28px, 3.5vw, 42px);
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-.featured-body p {
-  color: var(--text-dim);
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-.featured-body .read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--orange);
-  transition: gap .2s;
-}
-.featured-body .read-more:hover { gap: 14px; }
-.featured-body .read-more svg { width: 14px; height: 14px; }
-
-/* ============ ARTICLES GRID ============ */
-.articles {
-  padding-top: 60px;
-}
-.articles-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  margin-bottom: 48px;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.articles-header h2 { margin-bottom: 0; }
-
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-.article-card {
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: border-color .3s, transform .3s;
-  display: flex;
-  flex-direction: column;
-}
-.article-card:hover { border-color: var(--orange); transform: translateY(-4px); }
-
-.article-visual {
-  aspect-ratio: 16 / 10;
-  position: relative;
-  overflow: hidden;
-}
-.article-visual::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-.v-resto { background: linear-gradient(135deg, rgba(255,107,0,0.22), rgba(245,166,35,0.08)); }
-.v-pme   { background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(255,107,0,0.08)); }
-.v-ecom  { background: linear-gradient(135deg, rgba(245,166,35,0.18), rgba(255,107,0,0.10)); }
-.v-guide { background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,107,0,0.12)); }
-
-.article-visual .tag {
-  position: absolute;
-  top: 20px; left: 20px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text);
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border-strong);
-  padding: 5px 10px;
-  border-radius: 999px;
-}
-.article-visual .glyph {
-  position: absolute;
-  bottom: 20px; right: 20px;
-  font-family: var(--display);
-  font-style: italic;
-  font-size: clamp(42px, 6vw, 72px);
-  color: rgba(255,255,255,0.9);
-  line-height: 1;
+@media (max-width: 880px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    position: fixed; top: 72px; left: 0; right: 0;
+    background: var(--bg-elev); border-bottom: 1px solid var(--border);
+    flex-direction: column; padding: 24px var(--pad); align-items: stretch;
+    transform: translateY(-110%); transition: transform 0.3s;
+  }
+  .nav-links.open { transform: translateY(0); }
 }
 
-.article-body { padding: 28px 28px 32px; flex-grow: 1; display: flex; flex-direction: column; }
-.article-meta {
-  display: flex;
-  gap: 14px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-mute);
-  margin-bottom: 16px;
+/* ============ HERO ============ */
+.hero {
+  padding: 160px 0 100px;
+  position: relative; overflow: hidden;
 }
-.article-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-mute); align-self: center; }
-
-.article-card h3 {
-  font-family: var(--display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 1.2;
-  margin-bottom: 14px;
-  color: var(--text);
-}
-.article-body p {
-  color: var(--text-dim);
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-.article-body .read {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--orange);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.article-body .read svg { width: 12px; height: 12px; }
-
-/* ============ NEWSLETTER ============ */
-.newsletter {
-  background: linear-gradient(135deg, rgba(255,107,0,0.08), rgba(245,166,35,0.04));
-  border-top: 1px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
-.newsletter::before {
+.hero::before {
   content: ''; position: absolute; inset: 0;
   background:
-    radial-gradient(circle at 20% 50%, rgba(255,107,0,0.12), transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(245,166,35,0.08), transparent 50%);
+    radial-gradient(ellipse 800px 400px at 70% 20%, rgba(255, 107, 0, 0.12), transparent 70%),
+    radial-gradient(ellipse 600px 300px at 20% 80%, rgba(245, 166, 35, 0.06), transparent 70%);
   pointer-events: none;
 }
-.newsletter-inner {
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 90%);
+}
+.hero-inner {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
   align-items: center;
 }
-.newsletter h2 {
-  font-size: clamp(36px, 5vw, 60px);
-  font-style: italic;
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 6px 14px; border-radius: 999px;
+  background: rgba(255, 107, 0, 0.08);
+  border: 1px solid rgba(255, 107, 0, 0.25);
+  font-family: var(--mono); font-size: 11px;
+  color: var(--orange-soft); letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+.hero h1 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.98; letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.hero h1 em {
+  font-style: italic; font-weight: 300;
+  color: var(--orange);
+  background: linear-gradient(120deg, var(--orange) 0%, var(--gold) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-lead {
+  font-size: 19px; color: var(--text-dim);
+  max-width: 540px; margin-bottom: 36px;
+  line-height: 1.55;
+}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+.hero-ctas .btn { padding: 14px 24px; font-size: 15px; }
+.hero-meta {
+  display: flex; gap: 28px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 12px;
+  color: var(--text-mute); letter-spacing: 0.04em;
+}
+.hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+.hero-meta span::before { content: '◆'; color: var(--orange); font-size: 8px; }
+
+/* WhatsApp mockup */
+.wa-mockup {
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 30px 80px -30px rgba(255, 107, 0, 0.4), 0 0 0 1px rgba(255, 107, 0, 0.15);
+}
+.wa-header {
+  display: flex; align-items: center; gap: 12px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.wa-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-weight: 600; color: var(--bg);
+}
+.wa-name { font-weight: 500; font-size: 15px; }
+.wa-status { font-size: 11px; color: var(--text-mute); display: flex; align-items: center; gap: 6px; }
+.wa-status::before { content: ''; width: 6px; height: 6px; background: #22c55e; border-radius: 50%; }
+.wa-msgs { display: flex; flex-direction: column; gap: 10px; }
+.wa-msg {
+  max-width: 80%; padding: 10px 14px; border-radius: 14px;
+  font-size: 14px; line-height: 1.4;
+}
+.wa-msg.them {
+  align-self: flex-start; background: var(--bg-elev);
+  border: 1px solid var(--border); border-bottom-left-radius: 4px;
+}
+.wa-msg.us {
+  align-self: flex-end; background: rgba(255, 107, 0, 0.12);
+  border: 1px solid rgba(255, 107, 0, 0.25);
+  border-bottom-right-radius: 4px;
+}
+.wa-time { font-size: 10px; color: var(--text-mute); margin-top: 4px; font-family: var(--mono); }
+.wa-typing {
+  align-self: flex-start; padding: 8px 12px; background: var(--bg-elev);
+  border: 1px solid var(--border); border-radius: 14px;
+  display: inline-flex; gap: 4px;
+}
+.wa-typing span {
+  width: 6px; height: 6px; background: var(--text-mute); border-radius: 50%;
+  animation: bounce 1.4s infinite;
+}
+.wa-typing span:nth-child(2) { animation-delay: 0.2s; }
+.wa-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+@media (max-width: 880px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+}
+
+/* ============ STATS BAR ============ */
+.stats-bar {
+  border-block: 1px solid var(--border);
+  background: var(--bg-elev);
+  padding: 40px 0;
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+}
+.stat { border-left: 2px solid var(--orange); padding-left: 16px; }
+.stat-num {
+  font-family: var(--display); font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400; line-height: 1; letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.1em;
+}
+@media (max-width: 720px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .stats-grid { grid-template-columns: 1fr; } }
+
+/* ============ SECTIONS ============ */
+section { padding: 100px 0; }
+.section-head {
+  max-width: 720px; margin-bottom: 60px;
+}
+.section-head .label {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--orange); letter-spacing: 0.18em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section-head h2 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1.05; letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
-.newsletter p {
-  color: var(--text-dim);
-  font-size: 16px;
-  line-height: 1.6;
+.section-head p { font-size: 18px; color: var(--text-dim); line-height: 1.6; }
+
+/* ============ PROBLEM ============ */
+.problem-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
 }
-.newsletter-form {
-  display: flex;
-  gap: 10px;
-  background: var(--bg);
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
-  padding: 8px;
-  transition: border-color .2s;
+.problem-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 32px;
+  position: relative; transition: all 0.3s;
 }
-.newsletter-form:focus-within { border-color: var(--orange); }
-.newsletter-form input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 15px;
-  padding: 12px 18px;
+.problem-card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+.problem-card .num {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--text-mute); letter-spacing: 0.15em; margin-bottom: 20px;
 }
-.newsletter-form input::placeholder { color: var(--text-mute); }
-.newsletter-form button {
-  padding: 12px 24px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 999px;
-  background: var(--orange);
-  color: #000;
-  transition: background .2s;
+.problem-card h3 {
+  font-family: var(--display); font-weight: 500;
+  font-size: 22px; line-height: 1.2; margin-bottom: 12px;
 }
-.newsletter-form button:hover { background: var(--gold); }
-.newsletter-note {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  color: var(--text-mute);
-  text-transform: uppercase;
-  margin-top: 16px;
+.problem-card p { color: var(--text-dim); font-size: 15px; line-height: 1.6; }
+@media (max-width: 880px) { .problem-grid { grid-template-columns: 1fr; } }
+
+/* ============ HOW IT WORKS ============ */
+.how-wrap { background: var(--bg-elev); border-block: 1px solid var(--border); }
+.how-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  position: relative;
 }
-.newsletter-success {
-  display: none;
-  padding: 16px 20px;
-  background: rgba(74,222,128,0.08);
-  border: 1px solid #4ADE80;
-  border-radius: var(--radius-sm);
-  color: #4ADE80;
-  font-size: 14px;
-  margin-top: 16px;
+.how-grid::before {
+  content: ''; position: absolute; top: 24px; left: 6%; right: 6%;
+  height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), var(--border-strong), transparent);
 }
-.newsletter-success.show { display: block; }
+.how-step { position: relative; }
+.how-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--orange);
+  color: var(--orange); font-family: var(--mono); font-weight: 500;
+  margin-bottom: 24px;
+}
+.how-step h4 { font-family: var(--display); font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+.how-step p { color: var(--text-dim); font-size: 14px; line-height: 1.6; }
+.how-step .when { display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 10px; color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase; }
+@media (max-width: 880px) { .how-grid { grid-template-columns: 1fr 1fr; } .how-grid::before { display: none; } }
+@media (max-width: 480px) { .how-grid { grid-template-columns: 1fr; } }
+
+/* ============ FEATURES ============ */
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.feature {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px;
+  transition: all 0.3s;
+}
+.feature:hover { border-color: var(--orange); transform: translateY(-3px); }
+.feature .ico {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(255, 107, 0, 0.1); border: 1px solid rgba(255, 107, 0, 0.3);
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; color: var(--orange);
+}
+.feature .ico svg { width: 22px; height: 22px; }
+.feature h4 { font-family: var(--display); font-size: 19px; font-weight: 500; margin-bottom: 8px; }
+.feature p { color: var(--text-dim); font-size: 14px; line-height: 1.6; }
+@media (max-width: 880px) { .features-grid { grid-template-columns: 1fr; } }
+
+/* ============ PRICING ============ */
+.pricing-wrap { background: var(--bg-elev); border-block: 1px solid var(--border); }
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  align-items: stretch;
+}
+.price-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 36px 28px;
+  display: flex; flex-direction: column;
+  position: relative; transition: all 0.3s;
+}
+.price-card.featured {
+  background: linear-gradient(180deg, rgba(255, 107, 0, 0.05), var(--bg-card));
+  border: 1px solid rgba(255, 107, 0, 0.4);
+  box-shadow: 0 0 60px -20px rgba(255, 107, 0, 0.4);
+  transform: scale(1.02);
+}
+.price-card:hover:not(.featured) { border-color: var(--border-strong); transform: translateY(-3px); }
+.price-card .badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--orange); color: var(--bg);
+  padding: 5px 14px; border-radius: 999px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
+}
+.price-card h3 {
+  font-family: var(--display); font-size: 28px; font-weight: 500;
+  margin-bottom: 6px;
+}
+.price-card .desc { color: var(--text-dim); font-size: 14px; margin-bottom: 28px; line-height: 1.5; }
+.price-amount {
+  display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;
+}
+.price-amount .num {
+  font-family: var(--display); font-size: 56px; font-weight: 400;
+  line-height: 1; letter-spacing: -0.03em;
+}
+.price-amount .per { color: var(--text-mute); font-size: 14px; }
+.price-setup {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--text-mute); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 28px;
+}
+.price-cta {
+  width: 100%; justify-content: center; padding: 14px;
+  margin-bottom: 24px;
+}
+.price-features {
+  list-style: none; display: flex; flex-direction: column; gap: 12px;
+}
+.price-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--text-dim); line-height: 1.5;
+}
+.price-features li::before {
+  content: ''; flex-shrink: 0;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: rgba(255, 107, 0, 0.15);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF6B00' stroke-width='3'><path d='M5 13l4 4L19 7'/></svg>");
+  background-repeat: no-repeat; background-position: center; background-size: 12px;
+  margin-top: 1px;
+}
+.price-custom {
+  text-align: center; margin-top: 40px;
+  font-family: var(--mono); font-size: 12px;
+  color: var(--text-mute); letter-spacing: 0.14em; text-transform: uppercase;
+}
+.price-custom a { color: var(--orange); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+@media (max-width: 880px) { .pricing-grid { grid-template-columns: 1fr; } .price-card.featured { transform: scale(1); } }
+
+/* ============ FAQ ============ */
+.faq-list { display: flex; flex-direction: column; gap: 8px; max-width: 800px; }
+.faq-item {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item[open] { border-color: var(--border-strong); }
+.faq-item summary {
+  padding: 22px 24px; cursor: pointer; list-style: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  font-family: var(--display); font-size: 18px; font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; font-family: var(--mono); font-size: 24px;
+  color: var(--orange); transition: transform 0.3s; flex-shrink: 0;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item .answer {
+  padding: 0 24px 24px; color: var(--text-dim); font-size: 15px; line-height: 1.7;
+}
+
+/* ============ CTA FINAL ============ */
+.cta-final {
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-final::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255, 107, 0, 0.15), transparent 70%);
+  pointer-events: none;
+}
+.cta-final h2 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(40px, 5vw, 72px); line-height: 1.05;
+  letter-spacing: -0.025em; margin-bottom: 24px;
+  position: relative;
+}
+.cta-final p {
+  font-size: 19px; color: var(--text-dim);
+  max-width: 580px; margin: 0 auto 36px;
+  position: relative;
+}
+.cta-final .hero-ctas { justify-content: center; position: relative; }
 
 /* ============ FOOTER ============ */
 .footer {
-  background: var(--bg);
+  background: var(--bg-elev);
   border-top: 1px solid var(--border);
-  padding: 80px 0 40px;
+  padding: 80px 0 32px;
+  margin-top: 80px;
 }
 .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 64px;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 60px;
 }
-.footer-brand { max-width: 320px; }
-.footer-brand p {
-  color: var(--text-dim); font-size: 14px; margin-top: 20px; line-height: 1.6;
-}
+.footer-brand .logo-img { height: 140px; max-width: 100%; }
 .footer-col h4 {
   font-family: var(--mono); font-size: 11px;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--text-mute); margin-bottom: 20px; font-weight: 500;
+  color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.18em;
+  margin-bottom: 16px; font-weight: 500;
 }
-.footer-col ul { list-style: none; padding: 0; }
-.footer-col li { margin-bottom: 10px; }
-.footer-col a { font-size: 14px; color: var(--text-dim); transition: color .2s; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 14px; color: var(--text-dim); transition: color 0.2s; }
 .footer-col a:hover { color: var(--orange); }
 .footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  color: var(--text-mute);
-  font-family: var(--mono);
-  letter-spacing: 0.1em;
+  padding-top: 28px; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  font-family: var(--mono); font-size: 11px;
+  color: var(--text-mute); letter-spacing: 0.1em;
 }
-
-/* ============ RESPONSIVE ============ */
-@media (max-width: 980px) {
-  .articles-grid { grid-template-columns: 1fr 1fr; }
-  .featured-card { grid-template-columns: 1fr; }
-  .newsletter-inner { grid-template-columns: 1fr; gap: 32px; }
+@media (max-width: 880px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-}
-@media (max-width: 720px) {
-  .nav-links { display: none; }
-  .menu-toggle {
-    display: flex; align-items: center; justify-content: center;
-    width: 42px; height: 42px;
-    border: 1px solid var(--border-strong);
-    border-radius: 50%;
-  }
-  .menu-toggle span { width: 16px; height: 1.5px; background: var(--text); position: relative; }
-  .menu-toggle span::before, .menu-toggle span::after {
-    content: ''; position: absolute; left: 0; width: 100%; height: 1.5px; background: var(--text);
-  }
-  .menu-toggle span::before { top: -5px; }
-  .menu-toggle span::after { top: 5px; }
-
-  .nav-links.open {
-    display: flex;
-    position: absolute; top: 100%; left: 0; right: 0;
-    flex-direction: column;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 24px; gap: 18px;
-  }
-  .nav .btn { display: none; }
-  .nav-links.open .btn { display: inline-flex; }
-
-  .articles-grid { grid-template-columns: 1fr; }
-  .featured-body { padding: 32px 28px; }
-  .newsletter-form { flex-direction: column; border-radius: var(--radius); }
-  .newsletter-form button { width: 100%; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-  section { padding: 60px 0; }
-  .page-header { padding-top: 140px; }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-.reveal.in { opacity: 1; transform: translateY(0); }
-.reveal[data-d="1"] { transition-delay: .08s; }
-.reveal[data-d="2"] { transition-delay: .16s; }
-.reveal[data-d="3"] { transition-delay: .24s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
-
-.lang-switch {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
-  padding: 3px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  margin-right: 8px;
-}
-.lang-switch a {
-  padding: 6px 10px;
-  border-radius: 999px;
-  color: var(--text-mute);
-  transition: color .2s, background .2s;
-}
-.lang-switch a:hover { color: var(--text); }
-.lang-switch a.active {
-  background: var(--orange);
-  color: #000;
-}
-@media (max-width: 720px) {
-  .lang-switch { margin-right: 0; margin-top: 8px; }
+  .footer-brand { grid-column: 1 / -1; }
 }
 </style>
 </head>
@@ -644,15 +501,15 @@ h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 500; }
 
     <div class="nav-links" id="navLinks">
       <a href="index.html#services">Services</a>
-      <a href="index.html#offres">Offres</a>
-      <a href="about.html">À propos</a>
+      <a href="index.html#offres">Offres agence</a>
+      <a href="#tarifs">Tarifs Jarvis</a>
       <a href="blog.html">Blog</a>
-<div class="lang-switch">
+      <div class="lang-switch">
         <a href="#" class="active" aria-current="page">FR</a>
-        <a href="../en/blog.html">EN</a>
+        <a href="../en/jarvis.html">EN</a>
       </div>
-      <a href="contact.html" class="btn btn-primary">
-        Devis gratuit
+      <a href="index.html#contact" class="btn btn-primary">
+        Réserver une démo
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -661,174 +518,320 @@ h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 500; }
   </div>
 </nav>
 
-<!-- ============ PAGE HEADER ============ -->
-<header class="page-header">
-  <div class="page-header-grid"></div>
-  <div class="container page-header-inner">
-    <span class="eyebrow reveal">Blog</span>
-    <h1 class="reveal" data-d="1">
-      Études de cas, guides,<br>
-      <em>retours du terrain</em>.
-    </h1>
-    <p class="lead reveal" data-d="2">
-      Chaque semaine, un article concret : automatisation réussie, erreur évitée, outil qu'on utilise vraiment. Zéro fluff, zéro "10 astuces pour" générique.
-    </p>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow">Produit phare · Restaurants</div>
+      <h1>L'assistant<br>WhatsApp <em>de votre équipe</em>.</h1>
+      <p class="hero-lead">
+        Vos managers passent 3h par jour à répondre aux mêmes questions de l'équipe :
+        rupture d'ingrédient, geste commercial, panne caisse. Jarvis répond à leur place,
+        instantanément, sur WhatsApp — 24/7, dans votre langage de marque.
+      </p>
+      <div class="hero-ctas">
+        <a href="index.html#contact" class="btn btn-primary">
+          Réserver une démo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#tarifs" class="btn btn-ghost">Voir les tarifs</a>
+      </div>
+      <div class="hero-meta">
+        <span>À partir de 99€/mois</span>
+        <span>Setup en 5 jours</span>
+        <span>Sans engagement</span>
+      </div>
+    </div>
+
+    <div class="wa-mockup">
+      <div class="wa-header">
+        <div class="wa-avatar">J</div>
+        <div>
+          <div class="wa-name">Jarvis · Assistant équipe</div>
+          <div class="wa-status">en ligne</div>
+        </div>
+      </div>
+      <div class="wa-msgs">
+        <div>
+          <div class="wa-msg them">On a plus de saumon, qu'est-ce que je propose ?</div>
+          <div class="wa-time" style="text-align:left;padding-left:6px;">14:32</div>
+        </div>
+        <div>
+          <div class="wa-msg us">Procédure rupture saumon : propose le bowl thon avocat (+1€ marge), excuse-toi et offre une boisson 33cl. Si client mécontent → escalade au manager.</div>
+          <div class="wa-time" style="text-align:right;padding-right:6px;">14:32</div>
+        </div>
+        <div class="wa-typing"><span></span><span></span><span></span></div>
+      </div>
+    </div>
   </div>
 </header>
 
-<!-- ============ CATEGORIES ============ -->
-<div class="cat-bar">
-  <div class="container">
-    <ul class="cat-list">
-      <li class="cat active" data-cat="all">Tout</li>
-      <li class="cat" data-cat="restaurant">Restaurants</li>
-      <li class="cat" data-cat="pme">PME</li>
-      <li class="cat" data-cat="ecommerce">E-commerce</li>
-      <li class="cat" data-cat="guide">Guides</li>
-      <li class="cat" data-cat="etude">Études de cas</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ============ FEATURED ============ -->
-<section class="featured">
-  <div class="container">
-</div>
-</section>
-
-<!-- ============ ARTICLES GRID ============ -->
-<section class="articles" id="articles-grid">
-  <div class="container">
-    <div class="articles-header reveal">
-      <h2>Derniers articles</h2>
-      <span style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.15em; color: var(--text-mute); text-transform: uppercase;">6 articles publiés</span>
+<!-- ============ STATS BAR ============ -->
+<section class="stats-bar" style="padding: 40px 0;">
+  <div class="container stats-grid">
+    <div class="stat">
+      <div class="stat-num">3h<span style="color:var(--orange);font-size:0.6em;">/jour</span></div>
+      <div class="stat-label">économisées par manager</div>
     </div>
-
-    <div class="articles-grid">
-
-      <a href="articles/5-workflows-restaurants.html" class="article-card reveal" data-d="1" data-cat="restaurant">
-        <div class="article-visual v-resto">
-          <span class="tag">Restaurant</span>
-          <span class="glyph">01</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta">
-            <span>15 avr 2026</span>
-            <span class="dot"></span>
-            <span>5 min</span>
-          </div>
-          <h3>5 workflows qui sauvent la vie d'un restaurateur</h3>
-          <p>Avis Google, rappels de réservation, alertes stock, planning hebdo, commandes fournisseurs. Les 5 workflows qu'on déploie quasi systématiquement.</p>
-          <span class="read">Lire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a href="articles/relances-factures-pme.html" class="article-card reveal" data-d="2" data-cat="pme">
-        <div class="article-visual v-pme">
-          <span class="tag">PME</span>
-          <span class="glyph">02</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta">
-            <span>10 avr 2026</span>
-            <span class="dot"></span>
-            <span>7 min</span>
-          </div>
-          <h3>Relances factures impayées : ce qu'on automatise, ce qu'on laisse humain</h3>
-          <p>La frontière est subtile. Trop d'automatisation et on passe pour un robot. Pas assez et on perd 10 heures par mois. Voilà où on place le curseur.</p>
-          <span class="read">Lire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a href="articles/paniers-abandonnes-shopify.html" class="article-card reveal" data-d="3" data-cat="ecommerce">
-        <div class="article-visual v-ecom">
-          <span class="tag">E-commerce</span>
-          <span class="glyph">03</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta">
-            <span>5 avr 2026</span>
-            <span class="dot"></span>
-            <span>4 min</span>
-          </div>
-          <h3>Paniers abandonnés Shopify : la séquence qui convertit 18%</h3>
-          <p>Benchmark actuel : 8-12% de récupération. On a construit une séquence qui tape 18% sur 3 mois. Les 3 emails exacts, timing, conditions.</p>
-          <span class="read">Lire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a href="articles/n8n-vs-zapier-vs-make.html" class="article-card reveal" data-d="1" data-cat="guide">
-        <div class="article-visual v-guide">
-          <span class="tag">Guide</span>
-          <span class="glyph">04</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta">
-            <span>1 avr 2026</span>
-            <span class="dot"></span>
-            <span>12 min</span>
-          </div>
-          <h3>n8n vs Zapier vs Make : le comparatif honnête d'une agence qui utilise les 3</h3>
-          <p>Pas de sponsorisé, pas d'affiliation. Trois outils, trois forces, trois moments où chacun est le bon choix. Prix réels, limites réelles.</p>
-          <span class="read">Lire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a href="articles/sms-no-shows.html" class="article-card reveal" data-d="2" data-cat="restaurant">
-        <div class="article-visual v-resto">
-          <span class="tag">Restaurant</span>
-          <span class="glyph">05</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta">
-            <span>28 mar 2026</span>
-            <span class="dot"></span>
-            <span>6 min</span>
-          </div>
-          <h3>Rappels SMS de réservation : comment on a réduit les no-shows de 70%</h3>
-          <p>Timing, wording, quel outil on utilise, comment on l'intègre à un Zenchef ou un TheFork. Le workflow complet.</p>
-          <span class="read">Lire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a href="articles/excel-vers-crm.html" class="article-card reveal" data-d="3" data-cat="pme">
-        <div class="article-visual v-pme">
-          <span class="tag">PME</span>
-          <span class="glyph">06</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta">
-            <span>22 mar 2026</span>
-            <span class="dot"></span>
-            <span>8 min</span>
-          </div>
-          <h3>Passer de Excel à un vrai CRM sans que vos commerciaux vous détestent</h3>
-          <p>La migration qui échoue 8 fois sur 10. Notre méthode en 4 étapes pour que l'équipe adopte l'outil au lieu de le saboter.</p>
-          <span class="read">Lire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
+    <div class="stat">
+      <div class="stat-num">< 2s</div>
+      <div class="stat-label">temps de réponse moyen</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">disponibilité</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5j</div>
+      <div class="stat-label">de l'appel à la mise en prod</div>
     </div>
   </div>
 </section>
 
-<!-- ============ NEWSLETTER ============ -->
-<section class="newsletter">
-  <div class="container newsletter-inner">
-    <div class="reveal">
-      <span class="eyebrow">Newsletter</span>
-      <h2>Un workflow par semaine,<br>direct dans votre boîte mail.</h2>
-      <p>Chaque lundi, je décortique un workflow concret qu'on a construit pour un client : le problème, la solution n8n, combien ça coûte, combien ça économise. Pas de pub, pas d'affiliation. Désinscription en 1 clic.</p>
+<!-- ============ PROBLEM ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="label">Le vrai coût</div>
+      <h2>Ce que ça vous coûte vraiment.</h2>
+      <p>Chaque appel d'un équipier à son manager pour une question qui revient en boucle, c'est trois choses : du temps, de l'attention coupée, et une décision qui se prend à retardement.</p>
     </div>
-    <div class="reveal" data-d="1">
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" id="newsletterEmail" placeholder="vous@entreprise.com" required>
-        <button type="submit">S'abonner</button>
-      </form>
-      <p class="newsletter-note">~600 abonnés · 1 email / semaine · zéro spam</p>
-      <div class="newsletter-success" id="newsletterSuccess">
-        ✓ Inscrit. Premier email lundi.
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="num">01 — TEMPS</div>
+        <h3>3h par jour, en moyenne.</h3>
+        <p>C'est ce que les managers et patrons de restaurant passent au téléphone avec leur équipe pour des situations déjà documentées dans des PDF que personne ne consulte en plein rush.</p>
       </div>
+      <div class="problem-card">
+        <div class="num">02 — ATTENTION</div>
+        <h3>Toujours interrompu.</h3>
+        <p>Vous êtes en compta, en réunion fournisseur, en pleine prep service. Le téléphone sonne. Vous répondez. Vous reprenez 12 minutes plus tard. Et ça recommence.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">03 — DÉCISIONS</div>
+        <h3>L'équipe attend.</h3>
+        <p>Sans réponse rapide, l'équipier improvise — souvent à côté de la procédure de marque. Ou il attend, et le client repart frustré. Les deux finissent par coûter cher.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how-wrap">
+  <div class="container">
+    <div class="section-head">
+      <div class="label">Comment ça marche</div>
+      <h2>Cinq jours, du brief à la mise en prod.</h2>
+      <p>On reprend vos procédures (PDF, Notion, mémoire d'équipe), on entraîne Jarvis dessus, on le branche à WhatsApp Business. Vos équipes posent leurs questions par message — comme à un collègue.</p>
+    </div>
+
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <h4>On capture vos procédures</h4>
+        <p>Bible interne, manuel d'ouverture, scripts de service. Tout ce qui est déjà écrit, et tout ce qui ne l'est pas encore mais que vous transmettez à l'oral.</p>
+        <span class="when">Jour 1</span>
+      </div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <h4>On configure Jarvis</h4>
+        <p>Ton de marque, règles d'escalade, intégrations (caisse, stock, planning). Jarvis répond comme vous le feriez, pas comme un chatbot générique.</p>
+        <span class="when">Jours 2–3</span>
+      </div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <h4>Tests sur scénarios réels</h4>
+        <p>On valide ensemble une cinquantaine de cas concrets tirés de votre quotidien. Si la réponse n'est pas la bonne, on l'ajuste.</p>
+        <span class="when">Jour 4</span>
+      </div>
+      <div class="how-step">
+        <div class="how-num">04</div>
+        <h4>Mise en prod WhatsApp</h4>
+        <p>Numéro WhatsApp Business activé, équipes onboardées en 30 min. Jarvis répond dès le lendemain matin, vous gardez la main sur le dashboard.</p>
+        <span class="when">Jour 5</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="label">Capacités</div>
+      <h2>Ce que Jarvis fait, concrètement.</h2>
+      <p>Pas une boîte noire qui "fait de l'IA". Un assistant qui répond à des questions précises avec les procédures précises de votre marque, et qui escalade quand il faut.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h4>Procédures à la demande</h4>
+        <p>Rupture, retour client, plainte allergène, panne. Jarvis donne la procédure exacte de votre marque en quelques secondes.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h4>Mémoire conversationnelle</h4>
+        <p>Jarvis se souvient du contexte d'une conversation pendant 30 minutes — pas besoin de tout réexpliquer à chaque message.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="12" rx="2"/></svg></div>
+        <h4>Escalade intelligente</h4>
+        <p>Si la situation sort du cadre (litige, geste commercial > seuil, allergène grave), Jarvis vous notifie immédiatement.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div>
+        <h4>Dashboard d'équipe</h4>
+        <p>Vous voyez les questions posées, qui pose quoi, les sujets qui reviennent. Si une question revient 10x, c'est un signal.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
+        <h4>Skills opérationnels</h4>
+        <p>Stock à signaler, incident à logger, demande de congé à enregistrer — Jarvis fait l'action, pas juste la conversation.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h4>Multi-langues (Premium)</h4>
+        <p>Équipe internationale ? Jarvis répond en FR, EN, NL — chacun dans sa langue, même si la procédure source est en français.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing-wrap" id="tarifs">
+  <div class="container">
+    <div class="section-head">
+      <div class="label">Tarifs Jarvis</div>
+      <h2>Trois formules. Pas de devis caché.</h2>
+      <p>Setup unique pour mettre Jarvis en place sur votre marque, puis abonnement mensuel pour l'hébergement, le monitoring et les évolutions. Sans engagement.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- STARTER -->
+      <article class="price-card">
+        <h3>Starter</h3>
+        <p class="desc">Pour un petit restaurant qui veut tester l'impact.</p>
+        <div class="price-amount">
+          <span class="num">99€</span>
+          <span class="per">/mois</span>
+        </div>
+        <div class="price-setup">+ Setup 997€ unique</div>
+        <a href="index.html#contact" class="btn btn-ghost price-cta">Démarrer Starter</a>
+        <ul class="price-features">
+          <li>1 numéro WhatsApp</li>
+          <li>100 questions/mois incluses</li>
+          <li>Bible jusqu'à 50 chunks</li>
+          <li>Dashboard de base</li>
+          <li>Support email 48h</li>
+        </ul>
+      </article>
+
+      <!-- BUSINESS -->
+      <article class="price-card featured">
+        <div class="badge">Le plus choisi</div>
+        <h3>Business</h3>
+        <p class="desc">Le sweet spot pour la plupart des restaurants.</p>
+        <div class="price-amount">
+          <span class="num">199€</span>
+          <span class="per">/mois</span>
+        </div>
+        <div class="price-setup">+ Setup 1 997€ unique</div>
+        <a href="index.html#contact" class="btn btn-primary price-cta">Démarrer Business</a>
+        <ul class="price-features">
+          <li>1 numéro WhatsApp</li>
+          <li>500 questions/mois incluses</li>
+          <li>Bible illimitée</li>
+          <li>Mémoire conversationnelle</li>
+          <li>Dashboard avancé + alertes</li>
+          <li>Skills inclus (stock, incidents, congés)</li>
+          <li>Support 24h</li>
+        </ul>
+      </article>
+
+      <!-- PREMIUM -->
+      <article class="price-card">
+        <h3>Premium</h3>
+        <p class="desc">Pour les chaînes et établissements premium.</p>
+        <div class="price-amount">
+          <span class="num">399€</span>
+          <span class="per">/mois</span>
+        </div>
+        <div class="price-setup">+ Setup 3 997€ unique</div>
+        <a href="index.html#contact" class="btn btn-ghost price-cta">Démarrer Premium</a>
+        <ul class="price-features">
+          <li>2 numéros WhatsApp (cuisine + service)</li>
+          <li>2 000 questions/mois incluses</li>
+          <li>Mode vocal inclus</li>
+          <li>Multi-langues (FR/EN/NL)</li>
+          <li>Skills avancés + reminders</li>
+          <li>Interface admin web</li>
+          <li>Support prioritaire 4h</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="price-custom">
+      Multi-établissements / Chaînes / Franchises → <a href="index.html#contact">tarif sur mesure</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="label">Questions fréquentes</div>
+      <h2>Ce qu'on nous demande le plus.</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Mes équipiers vont vraiment utiliser un bot ?</summary>
+        <div class="answer">Oui — parce qu'il est sur WhatsApp, l'app qu'ils utilisent déjà 100 fois par jour. Pas d'app à installer, pas de compte à créer. On envoie un numéro, ils écrivent comme à un collègue. Le taux d'adoption en première semaine tourne autour de 80%.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Et si Jarvis se trompe ou ne sait pas répondre ?</summary>
+        <div class="answer">S'il ne sait pas, il vous escalade par notification. S'il se trompe, vous corrigez la réponse dans le dashboard et il apprend pour la prochaine fois. Pendant le premier mois, on review ensemble les cas litigieux pour affiner le ton et les règles.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Combien de temps pour la mise en place ?</summary>
+        <div class="answer">5 jours ouvrés du brief à la mise en prod, dans 90% des cas. Si votre Bible interne est encore à structurer, on peut compter 2-3 jours supplémentaires pour la mettre en forme avec vous.</div>
+      </details>
+      <details class="faq-item">
+        <summary>C'est quoi exactement, une "question incluse" dans le forfait ?</summary>
+        <div class="answer">Un échange équipier ↔ Jarvis = 1 question. Une conversation sur 10 messages = 1 question (grâce à la mémoire conversationnelle). Au-delà du forfait, chaque question supplémentaire est facturée 0,15€. La plupart des restaurants restent largement dans leur quota.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Mes données sont stockées où ? RGPD ?</summary>
+        <div class="answer">Hébergement européen (datacenter Lituanie via Hostinger). Les conversations sont chiffrées au repos, supprimées automatiquement après 90 jours sauf configuration contraire. Vous restez propriétaire de vos données et pouvez les exporter à tout moment.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Je peux résilier quand ?</summary>
+        <div class="answer">Sans engagement. Vous résiliez par email avec un préavis de 30 jours. À la résiliation, vous récupérez l'export complet de vos procédures et de l'historique des conversations.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Et si je veux que Jarvis fasse autre chose qu'un restaurant ?</summary>
+        <div class="answer">Jarvis est aujourd'hui pensé spécifiquement pour la restauration (procédures cuisine + salle, gestion équipe, gestes commerciaux). On a d'autres produits en chantier pour les PME et les e-commerçants. Contactez-nous, on vous oriente.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="container" style="max-width: 800px;">
+    <div class="eyebrow" style="margin-bottom: 24px;">Prochaine étape</div>
+    <h2>Voir Jarvis en action sur votre cas ?</h2>
+    <p>30 minutes d'appel pour comprendre votre fonctionnement, vous montrer une démo concrète sur vos procédures, et vous dire honnêtement si Jarvis est pertinent chez vous.</p>
+    <div class="hero-ctas">
+      <a href="index.html#contact" class="btn btn-primary">
+        Réserver une démo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#tarifs" class="btn btn-ghost">Revoir les tarifs</a>
     </div>
   </div>
 </section>
@@ -840,16 +843,16 @@ h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 500; }
       <div class="footer-brand">
         <a href="index.html" class="logo">
           <img src="data:image/jpeg;base64,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" alt="n8de.me" class="logo-img">
-        </a></div>
+        </a>
+      </div>
 
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
           <li><a href="index.html#services">Services</a></li>
           <li><a href="index.html#approche">Approche</a></li>
-          <li><a href="index.html#offres">Offres</a></li>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#offres">Offres agence</a></li>
+          <li><a href="jarvis.html">Jarvis</a></li>
         </ul>
       </div>
 
@@ -878,68 +881,15 @@ h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 500; }
 </footer>
 
 <script>
-  // ====== NAV ======
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
-  document.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  const toggle = document.getElementById('menuToggle');
-  const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-
-  // ====== REVEAL ======
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('navLinks');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('open');
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // ====== CATEGORY FILTER ======
-  const cats = document.querySelectorAll('.cat');
-  const cards = document.querySelectorAll('.article-card[data-cat]');
-  cats.forEach(c => {
-    c.addEventListener('click', () => {
-      cats.forEach(x => x.classList.remove('active'));
-      c.classList.add('active');
-      const target = c.dataset.cat;
-      cards.forEach(card => {
-        const match = target === 'all' || card.dataset.cat === target;
-        card.style.display = match ? '' : 'none';
-      });
-    });
-  });
-
-  // ====== NEWSLETTER ======
-  // *** TO CONFIGURE ***
-  // Replace with your webhook (Brevo list, n8n, Zapier). Empty = mailto fallback.
-  const NEWSLETTER_WEBHOOK = '';
-
-  const nlForm = document.getElementById('newsletterForm');
-  const nlSuccess = document.getElementById('newsletterSuccess');
-  nlForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('newsletterEmail').value.trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-
-    try {
-      if (NEWSLETTER_WEBHOOK) {
-        await fetch(NEWSLETTER_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source: 'n8de.me/blog', timestamp: new Date().toISOString() })
-        });
-      }
-      nlForm.style.display = 'none';
-      nlSuccess.classList.add('show');
-    } catch (err) {
-      // Silently ignore for now — user gets no feedback on network error
-      nlForm.style.display = 'none';
-      nlSuccess.classList.add('show');
-    }
-  });
+  }
+})();
 </script>
 
 </body>
