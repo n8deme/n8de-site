@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Politique de cookies — n8de.me</title>
+<meta name="description" content="Politique de cookies du site n8de.me — Information sur l'usage des cookies et traceurs." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #000000; --bg-elev: #0a0a0a; --bg-card: #0f0f10;
+  --border: #1a1a1d; --border-strong: #2a2a2f;
+  --orange: #FF6B00; --orange-soft: #FF8A33;
+  --gold: #F5A623; --gold-soft: #FFC56B;
+  --text: #FFFFFF; --text-dim: #B8B8BD; --text-mute: #6E6E76;
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius: 14px; --radius-sm: 8px;
+  --maxw: 880px; --pad: clamp(20px, 4vw, 48px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { color: var(--orange); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--orange-soft); text-decoration: underline; }
+::selection { background: var(--orange); color: #000; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 16px var(--pad); display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+.nav-logo .accent { color: var(--orange); }
+.nav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); display: inline-flex; align-items: center; gap: 8px; }
+.nav-back:hover { color: var(--orange); text-decoration: none; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: clamp(60px, 10vw, 120px) var(--pad); }
+
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--orange); }
+
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 7vw, 80px); line-height: 1; letter-spacing: -0.03em; margin-bottom: 16px; }
+h1 em { font-style: italic; color: var(--orange); }
+
+.subtitle { font-size: clamp(16px, 1.6vw, 18px); color: var(--text-dim); margin-bottom: 12px; }
+.last-update { font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 64px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+h2 { font-family: var(--display); font-weight: 500; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.01em; line-height: 1.15; margin-top: 56px; margin-bottom: 20px; color: var(--text); }
+h2 .num { display: inline-block; font-family: var(--mono); font-weight: 400; font-size: 0.6em; color: var(--orange); margin-right: 12px; vertical-align: middle; }
+
+h3 { font-family: var(--display); font-weight: 500; font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: var(--text); }
+
+p { color: var(--text-dim); margin-bottom: 16px; font-size: 16px; line-height: 1.75; }
+strong { color: var(--text); font-weight: 600; }
+ul, ol { margin-bottom: 16px; margin-left: 24px; color: var(--text-dim); }
+li { margin-bottom: 8px; line-height: 1.7; }
+
+.info-block { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 24px 28px; margin: 24px 0; }
+.info-block p { margin-bottom: 8px; color: var(--text-dim); }
+.info-block p:last-child { margin-bottom: 0; }
+
+.cookie-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.cookie-table th, .cookie-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; }
+.cookie-table th { background: var(--bg-elev); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--orange); font-weight: 500; }
+.cookie-table td { color: var(--text-dim); }
+.cookie-table td strong { color: var(--text); font-family: var(--mono); font-size: 13px; }
+.cookie-table tr:last-child td { border-bottom: none; }
+
+.tag { display: inline-block; padding: 3px 10px; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 99px; }
+.tag-essential { background: rgba(34, 197, 94, 0.12); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+.tag-analytics { background: rgba(255, 107, 0, 0.12); color: var(--orange-soft); border: 1px solid rgba(255, 107, 0, 0.3); }
+
+.footer { border-top: 1px solid var(--border); padding: 48px var(--pad); background: var(--bg-elev); }
+.footer-inner { max-width: var(--maxw); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.footer-brand { font-family: var(--display); font-size: 24px; color: var(--text); }
+.footer-brand .accent { color: var(--orange); }
+.footer-legal { font-family: var(--mono); font-size: 11px; color: var(--text-mute); line-height: 1.8; letter-spacing: 0.06em; }
+.footer-legal a { color: var(--text-dim); }
+.footer-legal a:hover { color: var(--orange); }
+.footer-vat { font-style: italic; color: var(--text-mute); font-size: 11px; margin-top: 8px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 640px) {
+  .footer-inner { flex-direction: column; }
+  h1 { font-size: 42px; }
+  .container { padding-top: 60px; padding-bottom: 60px; }
+  .cookie-table { font-size: 13px; }
+  .cookie-table th, .cookie-table td { padding: 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/fr/" class="nav-logo">n8de<span class="accent">.</span>me</a>
+    <a href="/fr/" class="nav-back">← Retour</a>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="eyebrow">Politique des traceurs</div>
+  <h1>Politique de <em>cookies</em></h1>
+  <p class="subtitle">Information sur l'usage des cookies et traceurs sur n8de.me</p>
+  <div class="last-update">Dernière mise à jour : 28 avril 2026</div>
+
+  <h2><span class="num">01.</span>Qu'est-ce qu'un cookie ?</h2>
+  <p>Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, smartphone) lors de la consultation d'un site web. Il permet au site de mémoriser des informations sur votre visite (langue préférée, données de session, etc.) afin de faciliter votre navigation ultérieure.</p>
+  <p>Cette politique vous informe sur les cookies utilisés sur le site n8de.me, leur finalité, et la manière dont vous pouvez les contrôler.</p>
+
+  <h2><span class="num">02.</span>Notre approche</h2>
+  <div class="info-block">
+    <p><strong>n8de.me adopte une approche minimaliste des cookies.</strong></p>
+    <p>Nous n'utilisons pas de cookies publicitaires, ni de cookies de profilage à des fins commerciales. Aucune donnée n'est revendue à des tiers.</p>
+  </div>
+  <p>Nous utilisons uniquement les cookies strictement nécessaires au fonctionnement du site et, optionnellement, des cookies de mesure d'audience anonymisée pour améliorer notre service.</p>
+
+  <h2><span class="num">03.</span>Catégories de cookies utilisés</h2>
+
+  <h3>3.1. Cookies essentiels (toujours actifs)</h3>
+  <p>Ces cookies sont indispensables au bon fonctionnement du site. Ils ne peuvent pas être désactivés sans impacter votre navigation.</p>
+
+  <table class="cookie-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Finalité</th>
+        <th>Durée</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>session</strong></td>
+        <td>Maintien de la session utilisateur durant la navigation</td>
+        <td>Session</td>
+        <td><span class="tag tag-essential">Essentiel</span></td>
+      </tr>
+      <tr>
+        <td><strong>cookieconsent</strong></td>
+        <td>Mémorisation de votre choix concernant les cookies</td>
+        <td>12 mois</td>
+        <td><span class="tag tag-essential">Essentiel</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3.2. Cookies de mesure d'audience (consentement requis)</h3>
+  <p>Ces cookies nous aident à comprendre comment les visiteurs utilisent notre site, de manière anonymisée. Ils ne sont déposés qu'avec votre consentement explicite.</p>
+
+  <table class="cookie-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Finalité</th>
+        <th>Durée</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>_ga</strong> (si activé)</td>
+        <td>Mesure d'audience anonyme (Google Analytics avec IP anonymisée)</td>
+        <td>13 mois</td>
+        <td><span class="tag tag-analytics">Analytique</span></td>
+      </tr>
+      <tr>
+        <td><strong>_ga_*</strong> (si activé)</td>
+        <td>Différencier les utilisateurs uniques pour les statistiques</td>
+        <td>13 mois</td>
+        <td><span class="tag tag-analytics">Analytique</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size: 14px; color: var(--text-mute); font-style: italic;">Note : si vous voyez ces cookies sur votre navigateur, c'est qu'ils sont effectivement déposés. À la date de mise à jour de cette politique, leur activation dépend du module de consentement.</p>
+
+  <h2><span class="num">04.</span>Gestion de votre consentement</h2>
+
+  <h3>4.1. Lors de votre première visite</h3>
+  <p>Lors de votre première visite, un bandeau vous informe de l'utilisation de cookies non essentiels et vous propose de :</p>
+  <ul>
+    <li><strong>Accepter</strong> tous les cookies</li>
+    <li><strong>Refuser</strong> les cookies non essentiels</li>
+    <li><strong>Personnaliser</strong> vos préférences</li>
+  </ul>
+  <p>Votre choix est mémorisé pour 12 mois. Au-delà, vous serez à nouveau sollicité.</p>
+
+  <h3>4.2. Modifier vos préférences</h3>
+  <p>Vous pouvez à tout moment modifier vos préférences :</p>
+  <ul>
+    <li>En supprimant les cookies via les paramètres de votre navigateur</li>
+    <li>En revenant sur la page d'accueil et en cliquant sur "Gérer les cookies" (si disponible)</li>
+    <li>En nous contactant à <a href="mailto:hello@n8de.me">hello@n8de.me</a></li>
+  </ul>
+
+  <h3>4.3. Bloquer les cookies via votre navigateur</h3>
+  <p>Vous pouvez bloquer ou supprimer les cookies directement depuis les paramètres de votre navigateur. Voici les guides officiels :</p>
+  <ul>
+    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+    <li><a href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-ordinateur" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+    <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+    <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge/supprimer-les-cookies-dans-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+  </ul>
+  <p style="font-size: 14px; color: var(--text-mute); font-style: italic;">Attention : bloquer tous les cookies peut empêcher le bon fonctionnement de certaines fonctionnalités du site.</p>
+
+  <h2><span class="num">05.</span>Cookies tiers</h2>
+  <p>Lorsque vous interagissez avec certains contenus intégrés (vidéos YouTube, démos LinkedIn, formulaires Calendly, etc.), des cookies tiers peuvent être déposés directement par ces services. n8de.me n'a pas le contrôle direct sur ces cookies.</p>
+  <p>Pour en savoir plus, consultez les politiques de confidentialité respectives :</p>
+  <ul>
+    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google / YouTube</a></li>
+    <li><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://www.calendly.com/privacy" target="_blank" rel="noopener">Calendly</a></li>
+  </ul>
+
+  <h2><span class="num">06.</span>Durée de conservation</h2>
+  <p>Les cookies ont une durée de vie limitée :</p>
+  <ul>
+    <li><strong>Cookies de session</strong> : supprimés à la fermeture du navigateur</li>
+    <li><strong>Cookies persistants</strong> : durée maximale de 13 mois (recommandation CNIL/APD)</li>
+  </ul>
+
+  <h2><span class="num">07.</span>Vos droits</h2>
+  <p>Conformément au RGPD et à la loi belge du 30 juillet 2018, vous disposez de droits sur vos données personnelles. Pour les exercer, consultez notre <a href="/fr/confidentialite.html">Politique de confidentialité</a> ou contactez-nous à <a href="mailto:hello@n8de.me">hello@n8de.me</a>.</p>
+  <p>Vous pouvez également déposer une réclamation auprès de l'<strong>Autorité de Protection des Données belge</strong> :</p>
+  <div class="info-block">
+    <p>Autorité de Protection des Données</p>
+    <p>Rue de la Presse 35, 1000 Bruxelles, Belgique</p>
+    <p>Site : <a href="https://www.autoriteprotectiondonnees.be" target="_blank" rel="noopener">www.autoriteprotectiondonnees.be</a></p>
+  </div>
+
+  <h2><span class="num">08.</span>Modifications</h2>
+  <p>n8de.me se réserve le droit de modifier la présente politique de cookies à tout moment, notamment pour l'adapter aux évolutions légales, techniques ou de service. Toute modification sera publiée sur cette page avec mise à jour de la date de dernière modification.</p>
+
+  <h2><span class="num">09.</span>Contact</h2>
+  <p>Pour toute question relative à notre politique de cookies, contactez-nous à : <a href="mailto:hello@n8de.me">hello@n8de.me</a></p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">n8de<span class="accent">.</span>me</div>
+      <div class="footer-legal" style="margin-top: 8px;">
+        © 2026 Forma Kevin — Tous droits réservés<br>
+        BCE BE 0697.861.253 · Bruxelles, Belgique
+      </div>
+      <div class="footer-vat">TVA non applicable (art. 56bis CTVA)</div>
+    </div>
+    <div class="footer-links">
+      <a href="/fr/mentions-legales.html">Mentions légales</a>
+      <a href="/fr/confidentialite.html">Confidentialité</a>
+      <a href="/fr/cgv.html">CGV</a>
+      <a href="/fr/cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

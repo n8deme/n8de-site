@@ -871,9 +871,20 @@ h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 500; }
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div>© 2026 N8DE.ME — TOUS DROITS RÉSERVÉS</div>
-      <div>BORN IN BRUSSELS</div>
+    <div class="footer-bottom" style="flex-direction: column; gap: 20px; align-items: stretch;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;">
+        <div>© 2026 N8DE.ME — TOUS DROITS RÉSERVÉS · BCE 0697.861.253</div>
+        <div>BORN IN BRUSSELS</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+        <div style="font-style: italic; color: var(--text-mute); text-transform: none; letter-spacing: 0;">TVA non applicable (art. 56bis CTVA)</div>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="/fr/mentions-legales.html" style="color: var(--text-mute);">Mentions légales</a>
+          <a href="/fr/confidentialite.html" style="color: var(--text-mute);">Confidentialité</a>
+          <a href="/fr/cgv.html" style="color: var(--text-mute);">CGV</a>
+          <a href="/fr/cookies.html" style="color: var(--text-mute);">Cookies</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

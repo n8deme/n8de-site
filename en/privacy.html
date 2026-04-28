@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — n8de.me</title>
+<meta name="description" content="Privacy Policy of n8de.me — GDPR compliance for visitors and clients." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #000000; --bg-elev: #0a0a0a; --bg-card: #0f0f10;
+  --border: #1a1a1d; --border-strong: #2a2a2f;
+  --orange: #FF6B00; --orange-soft: #FF8A33;
+  --gold: #F5A623; --gold-soft: #FFC56B;
+  --text: #FFFFFF; --text-dim: #B8B8BD; --text-mute: #6E6E76;
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius: 14px; --radius-sm: 8px;
+  --maxw: 880px; --pad: clamp(20px, 4vw, 48px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { color: var(--orange); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--orange-soft); text-decoration: underline; }
+::selection { background: var(--orange); color: #000; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 16px var(--pad); display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+.nav-logo .accent { color: var(--orange); }
+.nav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); display: inline-flex; align-items: center; gap: 8px; }
+.nav-back:hover { color: var(--orange); text-decoration: none; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: clamp(60px, 10vw, 120px) var(--pad); }
+
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--orange); }
+
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 7vw, 80px); line-height: 1; letter-spacing: -0.03em; margin-bottom: 16px; }
+h1 em { font-style: italic; color: var(--orange); }
+
+.subtitle { font-size: clamp(16px, 1.6vw, 18px); color: var(--text-dim); margin-bottom: 12px; }
+.last-update { font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 64px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+h2 { font-family: var(--display); font-weight: 500; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.01em; line-height: 1.15; margin-top: 56px; margin-bottom: 20px; color: var(--text); }
+h2 .num { display: inline-block; font-family: var(--mono); font-weight: 400; font-size: 0.6em; color: var(--orange); margin-right: 12px; vertical-align: middle; }
+
+h3 { font-family: var(--display); font-weight: 500; font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: var(--text); }
+
+p { color: var(--text-dim); margin-bottom: 16px; font-size: 16px; line-height: 1.75; }
+strong { color: var(--text); font-weight: 600; }
+ul, ol { margin-bottom: 16px; margin-left: 24px; color: var(--text-dim); }
+li { margin-bottom: 8px; line-height: 1.7; }
+
+.info-block { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 24px 28px; margin: 24px 0; }
+.info-block p { margin-bottom: 8px; color: var(--text-dim); }
+.info-block p:last-child { margin-bottom: 0; }
+
+.footer { border-top: 1px solid var(--border); padding: 48px var(--pad); background: var(--bg-elev); }
+.footer-inner { max-width: var(--maxw); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.footer-brand { font-family: var(--display); font-size: 24px; color: var(--text); }
+.footer-brand .accent { color: var(--orange); }
+.footer-legal { font-family: var(--mono); font-size: 11px; color: var(--text-mute); line-height: 1.8; letter-spacing: 0.06em; }
+.footer-legal a { color: var(--text-dim); }
+.footer-legal a:hover { color: var(--orange); }
+.footer-vat { font-style: italic; color: var(--text-mute); font-size: 11px; margin-top: 8px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 640px) {
+  .footer-inner { flex-direction: column; }
+  h1 { font-size: 42px; }
+  .container { padding-top: 60px; padding-bottom: 60px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">n8de<span class="accent">.</span>me</a>
+    <a href="/en/" class="nav-back">← Back</a>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="eyebrow">Privacy & GDPR</div>
+  <h1>Privacy <em>policy</em></h1>
+  <p class="subtitle">How we handle your personal data</p>
+  <div class="last-update">Last updated: April 28, 2026</div>
+
+  <h2><span class="num">01.</span>Data controller</h2>
+  <div class="info-block">
+    <p><strong>Kevin Forma</strong> (n8de.me)</p>
+    <p>382 Avenue Charles Quint, 1083 Bruxelles, Bte 4, Belgium</p>
+    <p>BCE: BE 0697.861.253</p>
+    <p>Email: <a href="mailto:hello@n8de.me">hello@n8de.me</a></p>
+  </div>
+  <p>In accordance with the General Data Protection Regulation (GDPR — Regulation EU 2016/679) and the Belgian law of July 30, 2018, Kevin Forma acts as the data controller for personal data collected via the n8de.me website.</p>
+
+  <h2><span class="num">02.</span>Commitment</h2>
+  <p>n8de.me is committed to protecting the privacy of its visitors and clients, processing their personal data with the highest level of confidentiality, and strictly complying with applicable legal frameworks. No data is sold to third parties.</p>
+
+  <h2><span class="num">03.</span>Data collected</h2>
+
+  <h3>3.1. Data collected as a website visitor</h3>
+  <ul>
+    <li>IP address (anonymized)</li>
+    <li>Browser type and device</li>
+    <li>Pages visited and visit duration</li>
+    <li>Source of the visit (referrer)</li>
+  </ul>
+
+  <h3>3.2. Data collected as a prospect (form or outreach)</h3>
+  <ul>
+    <li>First name, last name, position</li>
+    <li>Professional email address</li>
+    <li>Company name and website</li>
+    <li>Industry / business sector</li>
+  </ul>
+
+  <h3>3.3. Data collected as a client</h3>
+  <ul>
+    <li>Identification data (first name, last name, position)</li>
+    <li>Company data (legal name, address, BCE/VAT number)</li>
+    <li>Contact details (email, phone)</li>
+    <li>Technical data necessary for service delivery (access to client tools, configuration data)</li>
+    <li>Billing and payment data</li>
+  </ul>
+
+  <h2><span class="num">04.</span>Processing purposes and legal basis</h2>
+  <p>Your data is processed for the following purposes:</p>
+  <ul>
+    <li><strong>Response to contact requests</strong> — legal basis: legitimate interest (article 6.1.f GDPR)</li>
+    <li><strong>B2B commercial outreach</strong> — legal basis: legitimate interest (article 6.1.f GDPR)</li>
+    <li><strong>Execution of contractual services</strong> — legal basis: contract performance (article 6.1.b GDPR)</li>
+    <li><strong>Billing and accounting obligations</strong> — legal basis: legal obligation (article 6.1.c GDPR)</li>
+    <li><strong>Anonymized audience measurement</strong> — legal basis: legitimate interest (article 6.1.f GDPR)</li>
+  </ul>
+
+  <h2><span class="num">05.</span>Retention period</h2>
+  <ul>
+    <li><strong>Prospect data</strong>: 3 years from last contact</li>
+    <li><strong>Client data</strong>: duration of contractual relationship + 10 years (Belgian accounting requirements)</li>
+    <li><strong>Navigation data</strong>: maximum 13 months</li>
+  </ul>
+
+  <h2><span class="num">06.</span>Recipients of data</h2>
+  <p>Your data may be transmitted to technical subprocessors necessary for business operations, in strict compliance with the GDPR. Main subprocessors include:</p>
+  <ul>
+    <li><strong>Hostinger International Ltd.</strong> (Cyprus) — web hosting</li>
+    <li><strong>Anthropic PBC</strong> (USA, under Standard Contractual Clauses) — Claude AI API provider</li>
+    <li><strong>Google LLC</strong> (USA, under Standard Contractual Clauses) — Google Workspace, Google Sheets</li>
+    <li><strong>Twilio Inc.</strong> (USA, under Standard Contractual Clauses) — WhatsApp Business messaging</li>
+    <li><strong>Brevo SAS</strong> (France) — email and marketing</li>
+    <li><strong>Accountable BV</strong> (Belgium) — accounting and invoicing</li>
+  </ul>
+  <p>No data is sold to third parties for commercial purposes.</p>
+
+  <h2><span class="num">07.</span>Your rights</h2>
+  <p>In accordance with the GDPR, you have the following rights regarding your personal data:</p>
+  <ul>
+    <li><strong>Right of access</strong> — obtain a copy of your data</li>
+    <li><strong>Right of rectification</strong> — correct inaccurate data</li>
+    <li><strong>Right of erasure</strong> — request deletion ("right to be forgotten")</li>
+    <li><strong>Right to restriction</strong> — restrict processing</li>
+    <li><strong>Right to portability</strong> — receive your data in a structured format</li>
+    <li><strong>Right to object</strong> — oppose processing based on legitimate interest</li>
+    <li><strong>Right to withdraw consent</strong> — at any time, without justification</li>
+  </ul>
+  <p>To exercise these rights, contact: <a href="mailto:hello@n8de.me">hello@n8de.me</a>. A response will be provided within one month maximum.</p>
+
+  <h2><span class="num">08.</span>Security</h2>
+  <p>n8de.me implements reasonable technical and organizational measures to protect your data against loss, unauthorized access, alteration, or destruction:</p>
+  <ul>
+    <li>Communications encrypted via HTTPS/TLS</li>
+    <li>Hosting on secure infrastructure</li>
+    <li>Access to data limited to authorized personnel</li>
+    <li>Regular backups</li>
+    <li>Data anonymization where possible</li>
+  </ul>
+
+  <h2><span class="num">09.</span>Complaints</h2>
+  <p>If you believe your rights are not respected, you may file a complaint with the <strong>Belgian Data Protection Authority</strong>:</p>
+  <div class="info-block">
+    <p>Belgian Data Protection Authority</p>
+    <p>Rue de la Presse 35, 1000 Brussels, Belgium</p>
+    <p>Website: <a href="https://www.dataprotectionauthority.be" target="_blank" rel="noopener">www.dataprotectionauthority.be</a></p>
+    <p>Email: <a href="mailto:contact@apd-gba.be">contact@apd-gba.be</a></p>
+  </div>
+
+  <h2><span class="num">10.</span>Modifications</h2>
+  <p>n8de.me reserves the right to modify this privacy policy to adapt to legal and technical evolutions. Any modification will be published on this page with an updated last-modified date.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">n8de<span class="accent">.</span>me</div>
+      <div class="footer-legal" style="margin-top: 8px;">
+        © 2026 Forma Kevin — All rights reserved<br>
+        BCE 0697.861.253 · Brussels, Belgium
+      </div>
+      <div class="footer-vat">VAT not applicable (Art. 56bis Belgian VAT Code)</div>
+    </div>
+    <div class="footer-links">
+      <a href="/en/legal-notice.html">Legal notice</a>
+      <a href="/en/privacy.html">Privacy</a>
+      <a href="/en/terms.html">Terms</a>
+      <a href="/en/cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

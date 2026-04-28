@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Conditions Générales de Vente — n8de.me</title>
+<meta name="description" content="Conditions Générales de Vente de n8de.me — Prestations d'automatisation pour PME et restaurants en Belgique." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #000000; --bg-elev: #0a0a0a; --bg-card: #0f0f10;
+  --border: #1a1a1d; --border-strong: #2a2a2f;
+  --orange: #FF6B00; --orange-soft: #FF8A33;
+  --gold: #F5A623; --gold-soft: #FFC56B;
+  --text: #FFFFFF; --text-dim: #B8B8BD; --text-mute: #6E6E76;
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius: 14px; --radius-sm: 8px;
+  --maxw: 880px; --pad: clamp(20px, 4vw, 48px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { color: var(--orange); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--orange-soft); text-decoration: underline; }
+::selection { background: var(--orange); color: #000; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 16px var(--pad); display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+.nav-logo .accent { color: var(--orange); }
+.nav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); display: inline-flex; align-items: center; gap: 8px; }
+.nav-back:hover { color: var(--orange); text-decoration: none; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: clamp(60px, 10vw, 120px) var(--pad); }
+
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--orange); }
+
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 7vw, 80px); line-height: 1; letter-spacing: -0.03em; margin-bottom: 16px; }
+h1 em { font-style: italic; color: var(--orange); }
+
+.subtitle { font-size: clamp(16px, 1.6vw, 18px); color: var(--text-dim); margin-bottom: 12px; }
+.last-update { font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 64px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+h2 { font-family: var(--display); font-weight: 500; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.01em; line-height: 1.15; margin-top: 56px; margin-bottom: 20px; color: var(--text); }
+h2 .num { display: inline-block; font-family: var(--mono); font-weight: 400; font-size: 0.6em; color: var(--orange); margin-right: 12px; vertical-align: middle; }
+
+h3 { font-family: var(--display); font-weight: 500; font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: var(--text); }
+
+p { color: var(--text-dim); margin-bottom: 16px; font-size: 16px; line-height: 1.75; }
+strong { color: var(--text); font-weight: 600; }
+ul, ol { margin-bottom: 16px; margin-left: 24px; color: var(--text-dim); }
+li { margin-bottom: 8px; line-height: 1.7; }
+
+.info-block { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 24px 28px; margin: 24px 0; }
+.info-block p { margin-bottom: 8px; color: var(--text-dim); }
+.info-block p:last-child { margin-bottom: 0; }
+.info-block .vat-note { font-size: 14px; color: var(--text-mute); font-style: italic; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+.pricing-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.pricing-table th, .pricing-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+.pricing-table th { background: var(--bg-elev); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--orange); font-weight: 500; }
+.pricing-table td { color: var(--text-dim); }
+.pricing-table td strong { color: var(--text); }
+.pricing-table tr:last-child td { border-bottom: none; }
+
+.footer { border-top: 1px solid var(--border); padding: 48px var(--pad); background: var(--bg-elev); }
+.footer-inner { max-width: var(--maxw); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.footer-brand { font-family: var(--display); font-size: 24px; color: var(--text); }
+.footer-brand .accent { color: var(--orange); }
+.footer-legal { font-family: var(--mono); font-size: 11px; color: var(--text-mute); line-height: 1.8; letter-spacing: 0.06em; }
+.footer-legal a { color: var(--text-dim); }
+.footer-legal a:hover { color: var(--orange); }
+.footer-vat { font-style: italic; color: var(--text-mute); font-size: 11px; margin-top: 8px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 640px) {
+  .footer-inner { flex-direction: column; }
+  h1 { font-size: 42px; }
+  .container { padding-top: 60px; padding-bottom: 60px; }
+  .pricing-table { font-size: 13px; }
+  .pricing-table th, .pricing-table td { padding: 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/fr/" class="nav-logo">n8de<span class="accent">.</span>me</a>
+    <a href="/fr/" class="nav-back">← Retour</a>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="eyebrow">Conditions commerciales</div>
+  <h1>Conditions Générales <em>de Vente</em></h1>
+  <p class="subtitle">Conditions applicables aux prestations n8de.me</p>
+  <div class="last-update">Dernière mise à jour : 28 avril 2026</div>
+
+  <h2><span class="num">Art. 1</span>Identification du prestataire</h2>
+  <div class="info-block">
+    <p><strong>n8de.me</strong> est l'enseigne commerciale de :</p>
+    <p><strong>Kevin Forma</strong>, entrepreneur indépendant (entreprise individuelle)</p>
+    <p>Adresse : 382 Avenue Charles Quint, 1083 Bruxelles, Bte 4</p>
+    <p>Email : <a href="mailto:hello@n8de.me">hello@n8de.me</a></p>
+    <p>Numéro BCE : BE 0697.861.253</p>
+    <p>Régime TVA : <strong>Franchise — Article 56bis du Code de la TVA belge</strong></p>
+    <p class="vat-note">n8de.me bénéficie du régime de la franchise de la TVA. Aucune TVA n'est facturée. Le client n'a donc pas de TVA à déduire sur les prestations facturées.</p>
+  </div>
+
+  <h2><span class="num">Art. 2</span>Objet et champ d'application</h2>
+  <p>Les présentes Conditions Générales de Vente (« CGV ») régissent toute relation commerciale entre n8de.me et son client professionnel (« Client ») dans le cadre de prestations de service relatives à l'automatisation de processus d'entreprise, notamment :</p>
+  <ul>
+    <li>Conseil en automatisation et audit de processus</li>
+    <li>Conception et développement de workflows sur mesure (notamment via la plateforme n8n)</li>
+    <li>Intégration d'outils tiers (APIs, SaaS, CRM, plateformes de communication)</li>
+    <li>Formation et accompagnement à l'usage des automatisations</li>
+    <li>Maintenance et support technique sur les solutions livrées</li>
+    <li>Hébergement et exploitation de l'assistant Jarvis (offre SaaS)</li>
+  </ul>
+  <p>Toute commande ou souscription emporte acceptation pleine et entière des présentes CGV.</p>
+
+  <h2><span class="num">Art. 3</span>Offres et prix</h2>
+  <p>n8de.me propose plusieurs offres standards :</p>
+
+  <table class="pricing-table">
+    <thead>
+      <tr><th>Offre</th><th>Prix</th><th>Description</th><th>Délai estimé</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Starter</strong></td>
+        <td>997 € (setup) + 99 €/mois</td>
+        <td>Pour un petit restaurant qui veut tester l'impact</td>
+        <td>7 jours ouvrés</td>
+      </tr>
+      <tr>
+        <td><strong>Business</strong></td>
+        <td>1 997 € (setup) + 199 €/mois</td>
+        <td>Sweet spot pour la plupart des restaurants</td>
+        <td>10 jours ouvrés</td>
+      </tr>
+      <tr>
+        <td><strong>Premium</strong></td>
+        <td>3 997 € (setup) + 399 €/mois</td>
+        <td>Système complet pour chaînes et établissements premium</td>
+        <td>21 jours ouvrés</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Les prix sont indiqués en euros, nets de TVA. n8de.me bénéficiant du régime de la franchise TVA (Article 56bis du Code de la TVA belge), <strong>aucune TVA n'est ajoutée ni appliquée</strong> sur les factures émises. Le prix indiqué est donc le prix final dû par le Client.</p>
+  <p>Toute prestation hors offre standard fait l'objet d'un devis personnalisé. Les délais et tarifs des offres sont susceptibles de modification après notification écrite préalable.</p>
+
+  <h2><span class="num">Art. 4</span>Processus de commande</h2>
+
+  <h3>4.1. Devis</h3>
+  <p>Toute prestation débute par l'émission d'un devis détaillé valable <strong>30 jours</strong> à compter de sa date d'émission. Le devis précise la nature des prestations, le délai de livraison estimé, le prix et les conditions de paiement.</p>
+
+  <h3>4.2. Acceptation</h3>
+  <p>L'acceptation du devis se fait par écrit (email ou signature électronique). Cette acceptation entraîne l'application immédiate des présentes CGV.</p>
+
+  <h3>4.3. Acompte</h3>
+  <p>Pour les prestations supérieures à 500 €, un acompte de 50% est requis à la commande. Le solde est dû à la livraison de la prestation.</p>
+
+  <h2><span class="num">Art. 5</span>Délais de livraison</h2>
+  <p>Les délais estimés courent à compter de la réception du brief client complet, des accès nécessaires aux outils tiers et du paiement de l'acompte (si applicable). Tout retard dans la fourniture de ces éléments par le Client entraîne un report équivalent du délai de livraison.</p>
+  <p>Les délais communiqués constituent des estimations de bonne foi et n'engagent n8de.me qu'à une <strong>obligation de moyens</strong>, et non à une obligation de résultat sur le timing. Aucune pénalité pour retard ne pourra être réclamée par le Client, sauf accord écrit préalable convenant expressément d'un délai contractuel ferme.</p>
+  <p>n8de.me s'engage à informer le Client, dans un délai raisonnable, de tout retard prévisible et de la nouvelle date estimée de livraison.</p>
+
+  <h2><span class="num">Art. 6</span>Conditions de paiement</h2>
+  <ul>
+    <li><strong>Échéance</strong> : 30 jours date de facture (sauf accord contraire écrit)</li>
+    <li><strong>Mode de paiement</strong> : virement bancaire ou paiement par lien Stripe</li>
+    <li><strong>Devise</strong> : euros (EUR)</li>
+    <li><strong>Mention TVA</strong> : aucune TVA n'est facturée (franchise art. 56bis CTVA)</li>
+  </ul>
+
+  <h3>6.1. Retard de paiement</h3>
+  <p>Conformément à la loi belge du 2 août 2002 relative à la lutte contre le retard de paiement dans les transactions commerciales, en cas de défaut de paiement à l'échéance et sans mise en demeure préalable, le Client devra payer :</p>
+  <ul>
+    <li>Des intérêts moratoires au taux légal (BCE + 8 points de pourcentage)</li>
+    <li>Une indemnité forfaitaire de 40 € pour frais de recouvrement</li>
+    <li>Le remboursement des frais de recouvrement raisonnables encourus</li>
+  </ul>
+
+  <h2><span class="num">Art. 7</span>Obligations du Client</h2>
+  <p>Le Client s'engage à :</p>
+  <ul>
+    <li>Fournir un brief clair et complet, en français ou anglais</li>
+    <li>Mettre à disposition les accès nécessaires aux outils et plateformes concernés</li>
+    <li>Désigner un interlocuteur unique pour la coordination du projet</li>
+    <li>Répondre aux sollicitations dans des délais raisonnables</li>
+    <li>Régler les factures à échéance</li>
+    <li>Garantir la légalité des données et processus qu'il confie</li>
+  </ul>
+
+  <h2><span class="num">Art. 8</span>Obligations de n8de.me</h2>
+  <p>n8de.me s'engage à :</p>
+  <ul>
+    <li>Réaliser les prestations avec diligence et professionnalisme</li>
+    <li>Respecter les délais convenus, sous réserve des obligations du Client</li>
+    <li>Maintenir la confidentialité des informations transmises</li>
+    <li>Documenter les automatisations livrées</li>
+    <li>Respecter le RGPD dans le traitement des données</li>
+  </ul>
+
+  <h2><span class="num">Art. 9</span>Garantie et limitation de responsabilité</h2>
+
+  <h3>9.1. Garantie</h3>
+  <p>n8de.me garantit le bon fonctionnement des automatisations livrées pendant <strong>30 jours</strong> à compter de la date de livraison. Toute anomalie signalée durant cette période sera corrigée sans frais supplémentaires.</p>
+
+  <h3>9.2. Limitation</h3>
+  <p>La responsabilité de n8de.me est strictement limitée au montant des prestations facturées au Client sur les 12 derniers mois. n8de.me ne saurait être tenu responsable :</p>
+  <ul>
+    <li>Des dommages indirects ou immatériels (perte de chiffre d'affaires, perte de données)</li>
+    <li>Des défaillances des outils tiers utilisés (n8n, Anthropic, Twilio, Google, etc.)</li>
+    <li>D'une utilisation non conforme par le Client</li>
+    <li>De cas de force majeure</li>
+  </ul>
+
+  <h2><span class="num">Art. 10</span>Propriété intellectuelle</h2>
+  <p>Les workflows, configurations et documentations livrés par n8de.me deviennent la propriété du Client après paiement intégral. Toutefois, n8de.me conserve le droit de réutiliser ses méthodes, savoir-faire, modèles génériques et bibliothèques internes pour d'autres clients.</p>
+  <p>Les outils tiers (n8n, APIs, SaaS) restent soumis à leurs propres conditions de licence. Le Client est responsable du respect de ces licences.</p>
+
+  <h2><span class="num">Art. 11</span>Confidentialité</h2>
+  <p>Chaque partie s'engage à conserver strictement confidentielles toutes les informations échangées dans le cadre de la prestation, pendant la durée du contrat et pendant 3 ans après son terme.</p>
+
+  <h2><span class="num">Art. 12</span>Données personnelles</h2>
+  <p>Le traitement des données personnelles est régi par notre <a href="/fr/confidentialite.html">Politique de confidentialité</a>, conforme au RGPD.</p>
+  <p>Lorsque n8de.me agit en qualité de sous-traitant au sens du RGPD, un accord de sous-traitance (DPA) est établi à la demande du Client.</p>
+
+  <h2><span class="num">Art. 13</span>Résiliation</h2>
+
+  <h3>13.1. Prestations ponctuelles</h3>
+  <p>Une fois la prestation livrée et acceptée, le contrat prend fin. La maintenance éventuelle fait l'objet d'un contrat séparé.</p>
+
+  <h3>13.2. Abonnements SaaS (Jarvis)</h3>
+  <p>Les abonnements mensuels (Jarvis Starter/Business/Premium) sont sans engagement. Le Client peut résilier à tout moment, avec effet à la fin du mois en cours. Le Client conserve l'accès au service jusqu'à la fin de la période payée et reçoit un export de ses données (Bible documentaire) sous 30 jours.</p>
+
+  <h3>13.3. Résiliation pour faute</h3>
+  <p>En cas de manquement grave de l'une des parties (défaut de paiement supérieur à 60 jours, violation de confidentialité, etc.), le contrat peut être résilié de plein droit après mise en demeure restée sans effet pendant 15 jours.</p>
+
+  <h2><span class="num">Art. 14</span>Réclamation</h2>
+  <p>Toute réclamation relative à une prestation ou facture doit être notifiée par écrit à <a href="mailto:hello@n8de.me">hello@n8de.me</a> dans un délai de <strong>8 jours</strong> à compter de la livraison ou de la réception de la facture, à défaut elle sera réputée acceptée.</p>
+
+  <h2><span class="num">Art. 15</span>Force majeure</h2>
+  <p>Aucune partie ne sera responsable d'un manquement à ses obligations en cas de force majeure (au sens de la jurisprudence belge) : catastrophes naturelles, pannes majeures de tiers, conflits sociaux, actes gouvernementaux, etc.</p>
+
+  <h2><span class="num">Art. 16</span>Droit applicable et juridiction</h2>
+  <p>Les présentes CGV sont régies par le droit belge. Tout litige relève de la compétence exclusive des tribunaux de l'arrondissement judiciaire de Bruxelles, après tentative préalable de résolution amiable.</p>
+
+  <h2><span class="num">Art. 17</span>Modification des CGV</h2>
+  <p>n8de.me se réserve le droit de modifier les présentes CGV à tout moment. Les CGV applicables sont celles en vigueur au moment de la commande. Toute modification sera notifiée aux clients existants par email avec un préavis de 30 jours.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">n8de<span class="accent">.</span>me</div>
+      <div class="footer-legal" style="margin-top: 8px;">
+        © 2026 Forma Kevin — Tous droits réservés<br>
+        BCE BE 0697.861.253 · Bruxelles, Belgique
+      </div>
+      <div class="footer-vat">TVA non applicable (art. 56bis CTVA)</div>
+    </div>
+    <div class="footer-links">
+      <a href="/fr/mentions-legales.html">Mentions légales</a>
+      <a href="/fr/confidentialite.html">Confidentialité</a>
+      <a href="/fr/cgv.html">CGV</a>
+      <a href="/fr/cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

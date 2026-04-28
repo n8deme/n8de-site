@@ -380,6 +380,14 @@ section { padding: 100px 0; }
   line-height: 1; letter-spacing: -0.03em;
 }
 .price-amount .per { color: var(--text-mute); font-size: 14px; }
+.price-vat {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-mute);
+  font-style: italic;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
 .price-setup {
   font-family: var(--mono); font-size: 11px;
   color: var(--text-mute); letter-spacing: 0.08em;
@@ -719,6 +727,7 @@ section { padding: 100px 0; }
           <span class="per">/mois</span>
         </div>
         <div class="price-setup">+ Setup 997€ unique</div>
+        <div class="price-vat">TVA non applicable (art. 56bis CTVA)</div>
         <a href="index.html#contact" class="btn btn-ghost price-cta">Démarrer Starter</a>
         <ul class="price-features">
           <li>1 numéro WhatsApp</li>
@@ -739,6 +748,7 @@ section { padding: 100px 0; }
           <span class="per">/mois</span>
         </div>
         <div class="price-setup">+ Setup 1 997€ unique</div>
+        <div class="price-vat">TVA non applicable (art. 56bis CTVA)</div>
         <a href="index.html#contact" class="btn btn-primary price-cta">Démarrer Business</a>
         <ul class="price-features">
           <li>1 numéro WhatsApp</li>
@@ -760,6 +770,7 @@ section { padding: 100px 0; }
           <span class="per">/mois</span>
         </div>
         <div class="price-setup">+ Setup 3 997€ unique</div>
+        <div class="price-vat">TVA non applicable (art. 56bis CTVA)</div>
         <a href="index.html#contact" class="btn btn-ghost price-cta">Démarrer Premium</a>
         <ul class="price-features">
           <li>2 numéros WhatsApp (cuisine + service)</li>
@@ -873,9 +884,20 @@ section { padding: 100px 0; }
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div>© 2026 N8DE.ME — TOUS DROITS RÉSERVÉS</div>
-      <div>BORN IN BRUSSELS</div>
+    <div class="footer-bottom" style="flex-direction: column; gap: 20px; align-items: stretch;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;">
+        <div>© 2026 N8DE.ME — TOUS DROITS RÉSERVÉS · BCE 0697.861.253</div>
+        <div>BORN IN BRUSSELS</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+        <div style="font-style: italic; color: var(--text-mute); text-transform: none; letter-spacing: 0;">TVA non applicable (art. 56bis CTVA)</div>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="/fr/mentions-legales.html" style="color: var(--text-mute);">Mentions légales</a>
+          <a href="/fr/confidentialite.html" style="color: var(--text-mute);">Confidentialité</a>
+          <a href="/fr/cgv.html" style="color: var(--text-mute);">CGV</a>
+          <a href="/fr/cookies.html" style="color: var(--text-mute);">Cookies</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mentions légales — n8de.me</title>
+<meta name="description" content="Mentions légales du site n8de.me — Forma Kevin, entrepreneur indépendant en Belgique." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #000000;
+  --bg-elev: #0a0a0a;
+  --bg-card: #0f0f10;
+  --border: #1a1a1d;
+  --border-strong: #2a2a2f;
+  --orange: #FF6B00;
+  --orange-soft: #FF8A33;
+  --gold: #F5A623;
+  --gold-soft: #FFC56B;
+  --text: #FFFFFF;
+  --text-dim: #B8B8BD;
+  --text-mute: #6E6E76;
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --maxw: 880px;
+  --pad: clamp(20px, 4vw, 48px);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: var(--orange); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--orange-soft); text-decoration: underline; }
+::selection { background: var(--orange); color: #000; }
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 16px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.nav-logo .accent { color: var(--orange); }
+.nav-back {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-back:hover { color: var(--orange); text-decoration: none; }
+
+/* ============ CONTENT ============ */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(60px, 10vw, 120px) var(--pad);
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.eyebrow::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--orange);
+}
+
+h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(42px, 7vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+h1 em { font-style: italic; color: var(--orange); }
+
+.subtitle {
+  font-size: clamp(16px, 1.6vw, 18px);
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.last-update {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-mute);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-top: 56px;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+h2 .num {
+  display: inline-block;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 0.6em;
+  color: var(--orange);
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+p {
+  color: var(--text-dim);
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+strong { color: var(--text); font-weight: 600; }
+
+ul, ol {
+  margin-bottom: 16px;
+  margin-left: 24px;
+  color: var(--text-dim);
+}
+li { margin-bottom: 8px; line-height: 1.7; }
+
+.info-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 24px 0;
+}
+.info-block p {
+  margin-bottom: 8px;
+  color: var(--text-dim);
+}
+.info-block p:last-child { margin-bottom: 0; }
+.info-block .vat-note {
+  font-size: 14px;
+  color: var(--text-mute);
+  font-style: italic;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 48px var(--pad);
+  background: var(--bg-elev);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+.footer-brand {
+  font-family: var(--display);
+  font-size: 24px;
+  color: var(--text);
+}
+.footer-brand .accent { color: var(--orange); }
+.footer-legal {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+}
+.footer-legal a { color: var(--text-dim); }
+.footer-legal a:hover { color: var(--orange); }
+.footer-vat {
+  font-style: italic;
+  color: var(--text-mute);
+  font-size: 11px;
+  margin-top: 8px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+  .footer-inner { flex-direction: column; }
+  h1 { font-size: 42px; }
+  .container { padding-top: 60px; padding-bottom: 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/fr/" class="nav-logo">n8de<span class="accent">.</span>me</a>
+    <a href="/fr/" class="nav-back">← Retour</a>
+  </div>
+</nav>
+
+<!-- ============ CONTENT ============ -->
+<main class="container">
+  <div class="eyebrow">Information légale</div>
+  <h1>Mentions <em>légales</em></h1>
+  <p class="subtitle">Informations légales relatives au site n8de.me</p>
+  <div class="last-update">Dernière mise à jour : 28 avril 2026</div>
+
+  <h2><span class="num">01.</span>Éditeur du site</h2>
+  <div class="info-block">
+    <p><strong>Kevin Forma</strong></p>
+    <p>Entrepreneur indépendant — entreprise individuelle</p>
+    <p>Adresse du siège d'exploitation : <strong>382 Avenue Charles Quint, 1083 Bruxelles, Bte 4</strong></p>
+    <p>Email : <a href="mailto:hello@n8de.me">hello@n8de.me</a></p>
+    <p>Numéro d'entreprise (BCE) : <strong>BE 0697.861.253</strong></p>
+    <p>Régime TVA : <strong>Franchise — Article 56bis du Code de la TVA belge</strong></p>
+    <p class="vat-note">n8de.me bénéficie du régime de la franchise de la TVA. Aucune TVA n'est facturée et aucune TVA n'est déductible sur les prestations émises.</p>
+  </div>
+
+  <h2><span class="num">02.</span>Activité</h2>
+  <p>n8de.me est l'enseigne commerciale sous laquelle Kevin Forma exerce une activité de conseil en informatique et de développement de solutions d'automatisation de processus d'entreprise. Les prestations sont principalement destinées aux petites et moyennes entreprises et aux restaurants situés en Belgique et en France.</p>
+  <p>Codes NACE-BEL : 62200 (activité principale — conseil en informatique), 62100 et 62900 (activités secondaires — programmation et autres activités informatiques).</p>
+
+  <h2><span class="num">03.</span>Hébergement</h2>
+  <p>Le site n8de.me est hébergé par :</p>
+  <div class="info-block">
+    <p><strong>Hostinger International Ltd.</strong></p>
+    <p>61 Lordou Vironos Street, 6023, Larnaca, Chypre</p>
+    <p>Site web : <a href="https://www.hostinger.com" target="_blank" rel="noopener">www.hostinger.com</a></p>
+  </div>
+
+  <h2><span class="num">04.</span>Propriété intellectuelle</h2>
+  <p>L'ensemble des contenus présents sur le site n8de.me — textes, images, graphismes, logo, identité visuelle, code source, structure et mise en page — sont la propriété exclusive de Kevin Forma, sauf mention contraire explicite.</p>
+  <p>Toute reproduction, distribution, modification, adaptation, retransmission ou utilisation, partielle ou totale, sans autorisation écrite préalable est strictement interdite et constituerait une contrefaçon sanctionnée par le Code de droit économique belge (livre XI) et par les conventions internationales applicables.</p>
+
+  <h2><span class="num">05.</span>Responsabilité</h2>
+  <p>Les informations diffusées sur ce site sont fournies à titre indicatif. n8de.me s'efforce de garantir leur exactitude et leur mise à jour, mais ne peut être tenu responsable d'erreurs, d'omissions, de l'indisponibilité temporaire du site, ou des dommages directs ou indirects qui pourraient résulter de leur utilisation.</p>
+  <p>Les liens externes présents sur le site sont fournis à titre de commodité. n8de.me n'exerce aucun contrôle sur les sites tiers et décline toute responsabilité quant à leur contenu, leur disponibilité ou leur politique de confidentialité.</p>
+
+  <h2><span class="num">06.</span>Protection des données personnelles</h2>
+  <p>Le traitement des données personnelles effectué via ce site est régi par notre <a href="/fr/confidentialite.html">Politique de confidentialité</a>, conforme au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi belge du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel.</p>
+
+  <h2><span class="num">07.</span>Cookies</h2>
+  <p>L'utilisation des cookies sur ce site est détaillée dans notre <a href="/fr/cookies.html">Politique de cookies</a>.</p>
+
+  <h2><span class="num">08.</span>Conditions générales</h2>
+  <p>Les prestations commerciales proposées par n8de.me sont régies par les <a href="/fr/cgv.html">Conditions Générales de Vente</a> en vigueur.</p>
+
+  <h2><span class="num">09.</span>Droit applicable et juridiction</h2>
+  <p>Les présentes mentions légales sont soumises au droit belge. En cas de litige et après tentative de résolution amiable, les tribunaux de l'arrondissement judiciaire de Bruxelles seront seuls compétents.</p>
+
+  <h2><span class="num">10.</span>Contact</h2>
+  <p>Pour toute question relative à ces mentions légales, vous pouvez nous contacter par email à : <a href="mailto:hello@n8de.me">hello@n8de.me</a></p>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">n8de<span class="accent">.</span>me</div>
+      <div class="footer-legal" style="margin-top: 8px;">
+        © 2026 Forma Kevin — Tous droits réservés<br>
+        BCE BE 0697.861.253 · Bruxelles, Belgique
+      </div>
+      <div class="footer-vat">TVA non applicable (art. 56bis CTVA)</div>
+    </div>
+    <div class="footer-links">
+      <a href="/fr/mentions-legales.html">Mentions légales</a>
+      <a href="/fr/confidentialite.html">Confidentialité</a>
+      <a href="/fr/cgv.html">CGV</a>
+      <a href="/fr/cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

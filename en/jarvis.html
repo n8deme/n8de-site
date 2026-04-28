@@ -380,6 +380,14 @@ section { padding: 100px 0; }
   line-height: 1; letter-spacing: -0.03em;
 }
 .price-amount .per { color: var(--text-mute); font-size: 14px; }
+.price-vat {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-mute);
+  font-style: italic;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
 .price-setup {
   font-family: var(--mono); font-size: 11px;
   color: var(--text-mute); letter-spacing: 0.08em;
@@ -719,6 +727,7 @@ section { padding: 100px 0; }
           <span class="per">/mois</span>
         </div>
         <div class="price-setup">+ €997 one-time setup</div>
+        <div class="price-vat">VAT not applicable (Art. 56bis Belgian VAT Code)</div>
         <a href="index.html#contact" class="btn btn-ghost price-cta">Start with Starter</a>
         <ul class="price-features">
           <li>1 WhatsApp number</li>
@@ -739,6 +748,7 @@ section { padding: 100px 0; }
           <span class="per">/mois</span>
         </div>
         <div class="price-setup">+ €1,997 one-time setup</div>
+        <div class="price-vat">VAT not applicable (Art. 56bis Belgian VAT Code)</div>
         <a href="index.html#contact" class="btn btn-primary price-cta">Start with Business</a>
         <ul class="price-features">
           <li>1 WhatsApp number</li>
@@ -760,6 +770,7 @@ section { padding: 100px 0; }
           <span class="per">/mois</span>
         </div>
         <div class="price-setup">+ €3,997 one-time setup</div>
+        <div class="price-vat">VAT not applicable (Art. 56bis Belgian VAT Code)</div>
         <a href="index.html#contact" class="btn btn-ghost price-cta">Start with Premium</a>
         <ul class="price-features">
           <li>2 WhatsApp numbers (kitchen + service)</li>
@@ -873,9 +884,20 @@ section { padding: 100px 0; }
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div>© 2026 N8DE.ME — ALL RIGHTS RESERVED</div>
-      <div>BORN IN BRUSSELS</div>
+    <div class="footer-bottom" style="flex-direction: column; gap: 20px; align-items: stretch;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;">
+        <div>© 2026 N8DE.ME — ALL RIGHTS RESERVED · BCE 0697.861.253</div>
+        <div>BORN IN BRUSSELS</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+        <div style="font-style: italic; color: var(--text-mute); text-transform: none; letter-spacing: 0;">VAT not applicable (Art. 56bis Belgian VAT Code)</div>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="/en/legal-notice.html" style="color: var(--text-mute);">Legal notice</a>
+          <a href="/en/privacy.html" style="color: var(--text-mute);">Privacy</a>
+          <a href="/en/terms.html" style="color: var(--text-mute);">Terms</a>
+          <a href="/en/cookies.html" style="color: var(--text-mute);">Cookies</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

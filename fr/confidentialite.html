@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Politique de confidentialité — n8de.me</title>
+<meta name="description" content="Politique de confidentialité de n8de.me — Conformité RGPD pour les visiteurs et clients du site." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #000000; --bg-elev: #0a0a0a; --bg-card: #0f0f10;
+  --border: #1a1a1d; --border-strong: #2a2a2f;
+  --orange: #FF6B00; --orange-soft: #FF8A33;
+  --gold: #F5A623; --gold-soft: #FFC56B;
+  --text: #FFFFFF; --text-dim: #B8B8BD; --text-mute: #6E6E76;
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius: 14px; --radius-sm: 8px;
+  --maxw: 880px; --pad: clamp(20px, 4vw, 48px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { color: var(--orange); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--orange-soft); text-decoration: underline; }
+::selection { background: var(--orange); color: #000; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 16px var(--pad); display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+.nav-logo .accent { color: var(--orange); }
+.nav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); display: inline-flex; align-items: center; gap: 8px; }
+.nav-back:hover { color: var(--orange); text-decoration: none; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: clamp(60px, 10vw, 120px) var(--pad); }
+
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--orange); }
+
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 7vw, 80px); line-height: 1; letter-spacing: -0.03em; margin-bottom: 16px; }
+h1 em { font-style: italic; color: var(--orange); }
+
+.subtitle { font-size: clamp(16px, 1.6vw, 18px); color: var(--text-dim); margin-bottom: 12px; }
+.last-update { font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 64px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+h2 { font-family: var(--display); font-weight: 500; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.01em; line-height: 1.15; margin-top: 56px; margin-bottom: 20px; color: var(--text); }
+h2 .num { display: inline-block; font-family: var(--mono); font-weight: 400; font-size: 0.6em; color: var(--orange); margin-right: 12px; vertical-align: middle; }
+
+h3 { font-family: var(--display); font-weight: 500; font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: var(--text); }
+
+p { color: var(--text-dim); margin-bottom: 16px; font-size: 16px; line-height: 1.75; }
+strong { color: var(--text); font-weight: 600; }
+ul, ol { margin-bottom: 16px; margin-left: 24px; color: var(--text-dim); }
+li { margin-bottom: 8px; line-height: 1.7; }
+
+.info-block { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 24px 28px; margin: 24px 0; }
+.info-block p { margin-bottom: 8px; color: var(--text-dim); }
+.info-block p:last-child { margin-bottom: 0; }
+
+.warning-block { background: rgba(255, 107, 0, 0.05); border: 1px solid rgba(255, 107, 0, 0.2); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 24px 28px; margin: 24px 0; }
+.warning-block strong { color: var(--orange); }
+
+.footer { border-top: 1px solid var(--border); padding: 48px var(--pad); background: var(--bg-elev); }
+.footer-inner { max-width: var(--maxw); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.footer-brand { font-family: var(--display); font-size: 24px; color: var(--text); }
+.footer-brand .accent { color: var(--orange); }
+.footer-legal { font-family: var(--mono); font-size: 11px; color: var(--text-mute); line-height: 1.8; letter-spacing: 0.06em; }
+.footer-legal a { color: var(--text-dim); }
+.footer-legal a:hover { color: var(--orange); }
+.footer-vat { font-style: italic; color: var(--text-mute); font-size: 11px; margin-top: 8px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 640px) {
+  .footer-inner { flex-direction: column; }
+  h1 { font-size: 42px; }
+  .container { padding-top: 60px; padding-bottom: 60px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/fr/" class="nav-logo">n8de<span class="accent">.</span>me</a>
+    <a href="/fr/" class="nav-back">← Retour</a>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="eyebrow">Vie privée & RGPD</div>
+  <h1>Politique de <em>confidentialité</em></h1>
+  <p class="subtitle">Comment nous traitons vos données personnelles</p>
+  <div class="last-update">Dernière mise à jour : 28 avril 2026</div>
+
+  <h2><span class="num">01.</span>Responsable du traitement</h2>
+  <div class="info-block">
+    <p><strong>Kevin Forma</strong> (n8de.me)</p>
+    <p>382 Avenue Charles Quint, 1083 Bruxelles, Bte 4</p>
+    <p>BCE : BE 0697.861.253</p>
+    <p>Email : <a href="mailto:hello@n8de.me">hello@n8de.me</a></p>
+  </div>
+  <p>Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi belge du 30 juillet 2018, Kevin Forma agit en qualité de responsable du traitement des données personnelles collectées via le site n8de.me.</p>
+
+  <h2><span class="num">02.</span>Engagement</h2>
+  <p>n8de.me s'engage à protéger la vie privée de ses visiteurs et clients, à traiter leurs données personnelles avec la plus grande confidentialité, et à respecter scrupuleusement le cadre légal applicable. Aucune donnée n'est revendue à des tiers.</p>
+
+  <h2><span class="num">03.</span>Données collectées</h2>
+
+  <h3>3.1. Données collectées en tant que visiteur du site</h3>
+  <ul>
+    <li>Adresse IP (anonymisée)</li>
+    <li>Type de navigateur et appareil</li>
+    <li>Pages visitées et durée de la visite</li>
+    <li>Source de la visite (referrer)</li>
+  </ul>
+
+  <h3>3.2. Données collectées en tant que prospect (formulaire ou prospection)</h3>
+  <ul>
+    <li>Nom, prénom, fonction</li>
+    <li>Adresse email professionnelle</li>
+    <li>Nom de l'entreprise et site web</li>
+    <li>Secteur d'activité (déduit du site)</li>
+  </ul>
+
+  <h3>3.3. Données collectées en tant que client</h3>
+  <ul>
+    <li>Données d'identification (nom, prénom, fonction)</li>
+    <li>Données de l'entreprise (raison sociale, adresse, numéro BCE/TVA)</li>
+    <li>Coordonnées de contact (email, téléphone)</li>
+    <li>Données techniques nécessaires à la prestation (accès aux outils du client, données de configuration)</li>
+    <li>Données de facturation et de paiement</li>
+  </ul>
+
+  <h2><span class="num">04.</span>Finalités et bases légales</h2>
+  <p>Vos données sont traitées pour les finalités suivantes :</p>
+  <ul>
+    <li><strong>Réponse aux demandes de contact</strong> — base légale : intérêt légitime (article 6.1.f RGPD)</li>
+    <li><strong>Prospection commerciale B2B</strong> — base légale : intérêt légitime (article 6.1.f RGPD)</li>
+    <li><strong>Exécution des prestations contractuelles</strong> — base légale : exécution du contrat (article 6.1.b RGPD)</li>
+    <li><strong>Facturation et obligations comptables</strong> — base légale : obligation légale (article 6.1.c RGPD)</li>
+    <li><strong>Mesure d'audience anonymisée</strong> — base légale : intérêt légitime (article 6.1.f RGPD)</li>
+  </ul>
+
+  <h2><span class="num">05.</span>Durée de conservation</h2>
+  <ul>
+    <li><strong>Données prospects</strong> : 3 ans à compter du dernier contact</li>
+    <li><strong>Données clients</strong> : durée de la relation contractuelle + 10 ans (obligations comptables belges)</li>
+    <li><strong>Données de navigation</strong> : 13 mois maximum</li>
+  </ul>
+
+  <h2><span class="num">06.</span>Destinataires des données</h2>
+  <p>Vos données peuvent être transmises à des sous-traitants techniques nécessaires au fonctionnement de l'activité, dans le strict respect du RGPD. Les principaux sous-traitants sont :</p>
+  <ul>
+    <li><strong>Hostinger International Ltd.</strong> (Chypre) — hébergement web</li>
+    <li><strong>Anthropic PBC</strong> (USA, sous Standard Contractual Clauses) — fournisseur de l'API IA Claude</li>
+    <li><strong>Google LLC</strong> (USA, sous Standard Contractual Clauses) — Google Workspace, Google Sheets</li>
+    <li><strong>Twilio Inc.</strong> (USA, sous Standard Contractual Clauses) — messagerie WhatsApp Business</li>
+    <li><strong>Brevo SAS</strong> (France) — emailing et marketing</li>
+    <li><strong>Accountable BV</strong> (Belgique) — comptabilité et facturation</li>
+  </ul>
+  <p>Aucune donnée n'est revendue à des tiers à des fins commerciales.</p>
+
+  <h2><span class="num">07.</span>Vos droits</h2>
+  <p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :</p>
+  <ul>
+    <li><strong>Droit d'accès</strong> — obtenir une copie de vos données</li>
+    <li><strong>Droit de rectification</strong> — corriger des données inexactes</li>
+    <li><strong>Droit à l'effacement</strong> — demander la suppression (« droit à l'oubli »)</li>
+    <li><strong>Droit à la limitation</strong> — restreindre le traitement</li>
+    <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré</li>
+    <li><strong>Droit d'opposition</strong> — vous opposer au traitement basé sur l'intérêt légitime</li>
+    <li><strong>Droit de retrait du consentement</strong> — à tout moment, sans justification</li>
+  </ul>
+  <p>Pour exercer ces droits, adressez-vous à : <a href="mailto:hello@n8de.me">hello@n8de.me</a>. Une réponse vous sera fournie dans un délai d'un mois maximum.</p>
+
+  <h2><span class="num">08.</span>Sécurité</h2>
+  <p>n8de.me met en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre la perte, l'accès non autorisé, l'altération ou la destruction :</p>
+  <ul>
+    <li>Chiffrement des communications via HTTPS/TLS</li>
+    <li>Hébergement sur infrastructure sécurisée</li>
+    <li>Accès aux données limité aux personnes habilitées</li>
+    <li>Sauvegardes régulières</li>
+    <li>Anonymisation des données lorsque possible</li>
+  </ul>
+
+  <h2><span class="num">09.</span>Réclamation</h2>
+  <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de l'<strong>Autorité de Protection des Données belge</strong> :</p>
+  <div class="info-block">
+    <p>Autorité de Protection des Données</p>
+    <p>Rue de la Presse 35, 1000 Bruxelles, Belgique</p>
+    <p>Site : <a href="https://www.autoriteprotectiondonnees.be" target="_blank" rel="noopener">www.autoriteprotectiondonnees.be</a></p>
+    <p>Email : <a href="mailto:contact@apd-gba.be">contact@apd-gba.be</a></p>
+  </div>
+
+  <h2><span class="num">10.</span>Modifications</h2>
+  <p>n8de.me se réserve le droit de modifier la présente politique de confidentialité pour l'adapter aux évolutions légales et techniques. Toute modification sera publiée sur cette page avec mise à jour de la date de dernière modification.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">n8de<span class="accent">.</span>me</div>
+      <div class="footer-legal" style="margin-top: 8px;">
+        © 2026 Forma Kevin — Tous droits réservés<br>
+        BCE BE 0697.861.253 · Bruxelles, Belgique
+      </div>
+      <div class="footer-vat">TVA non applicable (art. 56bis CTVA)</div>
+    </div>
+    <div class="footer-links">
+      <a href="/fr/mentions-legales.html">Mentions légales</a>
+      <a href="/fr/confidentialite.html">Confidentialité</a>
+      <a href="/fr/cgv.html">CGV</a>
+      <a href="/fr/cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

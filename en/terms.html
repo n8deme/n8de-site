@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms and Conditions — n8de.me</title>
+<meta name="description" content="Terms and Conditions of Sale of n8de.me — Automation services for SMEs and restaurants in Belgium." />
+<meta name="robots" content="noindex, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #000000; --bg-elev: #0a0a0a; --bg-card: #0f0f10;
+  --border: #1a1a1d; --border-strong: #2a2a2f;
+  --orange: #FF6B00; --orange-soft: #FF8A33;
+  --gold: #F5A623; --gold-soft: #FFC56B;
+  --text: #FFFFFF; --text-dim: #B8B8BD; --text-mute: #6E6E76;
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius: 14px; --radius-sm: 8px;
+  --maxw: 880px; --pad: clamp(20px, 4vw, 48px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { color: var(--orange); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--orange-soft); text-decoration: underline; }
+::selection { background: var(--orange); color: #000; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 16px var(--pad); display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+.nav-logo .accent { color: var(--orange); }
+.nav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); display: inline-flex; align-items: center; gap: 8px; }
+.nav-back:hover { color: var(--orange); text-decoration: none; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: clamp(60px, 10vw, 120px) var(--pad); }
+
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--orange); }
+
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 7vw, 80px); line-height: 1; letter-spacing: -0.03em; margin-bottom: 16px; }
+h1 em { font-style: italic; color: var(--orange); }
+
+.subtitle { font-size: clamp(16px, 1.6vw, 18px); color: var(--text-dim); margin-bottom: 12px; }
+.last-update { font-family: var(--mono); font-size: 12px; color: var(--text-mute); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 64px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+
+h2 { font-family: var(--display); font-weight: 500; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.01em; line-height: 1.15; margin-top: 56px; margin-bottom: 20px; color: var(--text); }
+h2 .num { display: inline-block; font-family: var(--mono); font-weight: 400; font-size: 0.6em; color: var(--orange); margin-right: 12px; vertical-align: middle; }
+
+h3 { font-family: var(--display); font-weight: 500; font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: var(--text); }
+
+p { color: var(--text-dim); margin-bottom: 16px; font-size: 16px; line-height: 1.75; }
+strong { color: var(--text); font-weight: 600; }
+ul, ol { margin-bottom: 16px; margin-left: 24px; color: var(--text-dim); }
+li { margin-bottom: 8px; line-height: 1.7; }
+
+.info-block { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 24px 28px; margin: 24px 0; }
+.info-block p { margin-bottom: 8px; color: var(--text-dim); }
+.info-block p:last-child { margin-bottom: 0; }
+.info-block .vat-note { font-size: 14px; color: var(--text-mute); font-style: italic; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+.pricing-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.pricing-table th, .pricing-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+.pricing-table th { background: var(--bg-elev); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--orange); font-weight: 500; }
+.pricing-table td { color: var(--text-dim); }
+.pricing-table td strong { color: var(--text); }
+.pricing-table tr:last-child td { border-bottom: none; }
+
+.footer { border-top: 1px solid var(--border); padding: 48px var(--pad); background: var(--bg-elev); }
+.footer-inner { max-width: var(--maxw); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.footer-brand { font-family: var(--display); font-size: 24px; color: var(--text); }
+.footer-brand .accent { color: var(--orange); }
+.footer-legal { font-family: var(--mono); font-size: 11px; color: var(--text-mute); line-height: 1.8; letter-spacing: 0.06em; }
+.footer-legal a { color: var(--text-dim); }
+.footer-legal a:hover { color: var(--orange); }
+.footer-vat { font-style: italic; color: var(--text-mute); font-size: 11px; margin-top: 8px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 640px) {
+  .footer-inner { flex-direction: column; }
+  h1 { font-size: 42px; }
+  .container { padding-top: 60px; padding-bottom: 60px; }
+  .pricing-table { font-size: 13px; }
+  .pricing-table th, .pricing-table td { padding: 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/en/" class="nav-logo">n8de<span class="accent">.</span>me</a>
+    <a href="/en/" class="nav-back">← Back</a>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="eyebrow">Commercial conditions</div>
+  <h1>Terms and <em>conditions</em></h1>
+  <p class="subtitle">Conditions applicable to n8de.me services</p>
+  <div class="last-update">Last updated: April 28, 2026</div>
+
+  <h2><span class="num">Art. 1</span>Service provider identification</h2>
+  <div class="info-block">
+    <p><strong>n8de.me</strong> is the trade name of:</p>
+    <p><strong>Kevin Forma</strong>, independent entrepreneur (sole proprietorship)</p>
+    <p>Address: 382 Avenue Charles Quint, 1083 Bruxelles, Bte 4, Belgium</p>
+    <p>Email: <a href="mailto:hello@n8de.me">hello@n8de.me</a></p>
+    <p>BCE: BE 0697.861.253</p>
+    <p>VAT regime: <strong>Small Business Exemption — Article 56bis of the Belgian VAT Code</strong></p>
+    <p class="vat-note">n8de.me operates under the Belgian small business VAT exemption regime. No VAT is charged. The client therefore has no VAT to deduct on invoiced services.</p>
+  </div>
+
+  <h2><span class="num">Art. 2</span>Scope and applicability</h2>
+  <p>These Terms and Conditions of Sale ("Terms") govern any commercial relationship between n8de.me and its professional client ("Client") for service deliveries related to business process automation, including:</p>
+  <ul>
+    <li>Automation consulting and process audits</li>
+    <li>Design and development of custom workflows (notably via the n8n platform)</li>
+    <li>Integration of third-party tools (APIs, SaaS, CRM, communication platforms)</li>
+    <li>Training and support on automation usage</li>
+    <li>Maintenance and technical support on delivered solutions</li>
+    <li>Hosting and operation of the Jarvis assistant (SaaS offering)</li>
+  </ul>
+  <p>Any order or subscription implies full acceptance of these Terms.</p>
+
+  <h2><span class="num">Art. 3</span>Offerings and pricing</h2>
+  <p>n8de.me offers several standard plans:</p>
+
+  <table class="pricing-table">
+    <thead>
+      <tr><th>Plan</th><th>Price</th><th>Description</th><th>Estimated lead time</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Starter</strong></td>
+        <td>€997 (setup) + €99/month</td>
+        <td>For small restaurants testing the impact</td>
+        <td>7 business days</td>
+      </tr>
+      <tr>
+        <td><strong>Business</strong></td>
+        <td>€1,997 (setup) + €199/month</td>
+        <td>Sweet spot for most restaurants</td>
+        <td>10 business days</td>
+      </tr>
+      <tr>
+        <td><strong>Premium</strong></td>
+        <td>€3,997 (setup) + €399/month</td>
+        <td>Full system for chains and premium establishments</td>
+        <td>21 business days</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Prices are in euros, net of VAT. As n8de.me operates under the Belgian small business VAT exemption regime (Article 56bis of the Belgian VAT Code), <strong>no VAT is added or applied</strong> on issued invoices. The price shown is therefore the final amount due by the Client.</p>
+  <p>Any service outside the standard offerings is subject to a custom quote. Pricing and lead times for plans may be modified upon prior written notice.</p>
+
+  <h2><span class="num">Art. 4</span>Order process</h2>
+
+  <h3>4.1. Quote</h3>
+  <p>Any service starts with the issuance of a detailed quote valid for <strong>30 days</strong> from its issuance date. The quote specifies the nature of services, estimated lead time, price, and payment terms.</p>
+
+  <h3>4.2. Acceptance</h3>
+  <p>Quote acceptance is made in writing (email or electronic signature). This acceptance triggers the immediate application of these Terms.</p>
+
+  <h3>4.3. Deposit</h3>
+  <p>For services exceeding €500, a 50% deposit is required upon order. The balance is due upon delivery.</p>
+
+  <h2><span class="num">Art. 5</span>Lead times</h2>
+  <p>Estimated lead times start from receipt of the complete client brief, necessary access to third-party tools, and payment of the deposit (if applicable). Any delay in providing these elements by the Client results in an equivalent postponement of the lead time.</p>
+  <p>The communicated lead times constitute good-faith estimates and bind n8de.me only to a <strong>best-efforts obligation</strong>, not to a results obligation regarding timing. No penalty for delay may be claimed by the Client, except by prior written agreement expressly setting a firm contractual deadline.</p>
+  <p>n8de.me undertakes to inform the Client, within a reasonable timeframe, of any foreseeable delay and the new estimated delivery date.</p>
+
+  <h2><span class="num">Art. 6</span>Payment terms</h2>
+  <ul>
+    <li><strong>Due date</strong>: 30 days from invoice date (unless otherwise agreed in writing)</li>
+    <li><strong>Payment method</strong>: bank transfer or Stripe payment link</li>
+    <li><strong>Currency</strong>: euros (EUR)</li>
+    <li><strong>VAT mention</strong>: no VAT charged (small business exemption Art. 56bis Belgian VAT Code)</li>
+  </ul>
+
+  <h3>6.1. Late payment</h3>
+  <p>In accordance with the Belgian law of August 2, 2002 on combating late payment in commercial transactions, in the event of payment default at maturity and without prior notice, the Client shall pay:</p>
+  <ul>
+    <li>Default interest at the legal rate (ECB + 8 percentage points)</li>
+    <li>A flat-rate compensation of €40 for recovery costs</li>
+    <li>Reimbursement of reasonable recovery costs incurred</li>
+  </ul>
+
+  <h2><span class="num">Art. 7</span>Client obligations</h2>
+  <p>The Client undertakes to:</p>
+  <ul>
+    <li>Provide a clear and complete brief, in French or English</li>
+    <li>Make available the necessary access to relevant tools and platforms</li>
+    <li>Designate a single point of contact for project coordination</li>
+    <li>Respond to requests within reasonable timeframes</li>
+    <li>Pay invoices on due date</li>
+    <li>Guarantee the legality of data and processes entrusted</li>
+  </ul>
+
+  <h2><span class="num">Art. 8</span>n8de.me obligations</h2>
+  <p>n8de.me undertakes to:</p>
+  <ul>
+    <li>Perform services with diligence and professionalism</li>
+    <li>Respect agreed lead times, subject to Client obligations</li>
+    <li>Maintain confidentiality of transmitted information</li>
+    <li>Document delivered automations</li>
+    <li>Respect GDPR in data processing</li>
+  </ul>
+
+  <h2><span class="num">Art. 9</span>Warranty and liability limitation</h2>
+
+  <h3>9.1. Warranty</h3>
+  <p>n8de.me warrants the proper functioning of delivered automations for <strong>30 days</strong> from delivery date. Any anomaly reported during this period will be corrected at no additional cost.</p>
+
+  <h3>9.2. Limitation</h3>
+  <p>n8de.me's liability is strictly limited to the amount of services billed to the Client in the last 12 months. n8de.me cannot be held liable for:</p>
+  <ul>
+    <li>Indirect or immaterial damages (loss of revenue, data loss)</li>
+    <li>Failures of third-party tools used (n8n, Anthropic, Twilio, Google, etc.)</li>
+    <li>Non-compliant use by the Client</li>
+    <li>Force majeure events</li>
+  </ul>
+
+  <h2><span class="num">Art. 10</span>Intellectual property</h2>
+  <p>The workflows, configurations, and documentation delivered by n8de.me become the property of the Client after full payment. However, n8de.me retains the right to reuse its methods, know-how, generic templates, and internal libraries for other clients.</p>
+  <p>Third-party tools (n8n, APIs, SaaS) remain subject to their own license conditions. The Client is responsible for compliance with these licenses.</p>
+
+  <h2><span class="num">Art. 11</span>Confidentiality</h2>
+  <p>Each party undertakes to keep strictly confidential all information exchanged in the context of the service, during the contract duration and for 3 years after its termination.</p>
+
+  <h2><span class="num">Art. 12</span>Personal data</h2>
+  <p>Personal data processing is governed by our <a href="/en/privacy.html">Privacy Policy</a>, in compliance with GDPR.</p>
+  <p>When n8de.me acts as a data processor under GDPR, a Data Processing Agreement (DPA) is established at the Client's request.</p>
+
+  <h2><span class="num">Art. 13</span>Termination</h2>
+
+  <h3>13.1. One-off services</h3>
+  <p>Once the service is delivered and accepted, the contract ends. Any subsequent maintenance is subject to a separate contract.</p>
+
+  <h3>13.2. SaaS subscriptions (Jarvis)</h3>
+  <p>Monthly subscriptions (Jarvis Starter/Business/Premium) are without commitment. The Client may terminate at any time, effective at the end of the current month. The Client retains access to the service until the end of the paid period and receives an export of their data (documentary Bible) within 30 days.</p>
+
+  <h3>13.3. Termination for breach</h3>
+  <p>In case of serious breach by either party (payment default exceeding 60 days, breach of confidentiality, etc.), the contract may be terminated as of right after a formal notice that remains without effect for 15 days.</p>
+
+  <h2><span class="num">Art. 14</span>Complaint</h2>
+  <p>Any complaint relating to a service or invoice must be notified in writing to <a href="mailto:hello@n8de.me">hello@n8de.me</a> within <strong>8 days</strong> from delivery or invoice receipt, otherwise it will be deemed accepted.</p>
+
+  <h2><span class="num">Art. 15</span>Force majeure</h2>
+  <p>Neither party shall be liable for failure to perform its obligations in case of force majeure (within the meaning of Belgian case law): natural disasters, major third-party failures, social conflicts, government acts, etc.</p>
+
+  <h2><span class="num">Art. 16</span>Applicable law and jurisdiction</h2>
+  <p>These Terms are governed by Belgian law. Any dispute falls under the exclusive jurisdiction of the courts of the judicial district of Brussels, after prior attempt at amicable resolution.</p>
+
+  <h2><span class="num">Art. 17</span>Modification of Terms</h2>
+  <p>n8de.me reserves the right to modify these Terms at any time. The applicable Terms are those in effect at the time of order. Any modification will be notified to existing clients by email with a 30-day notice period.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">n8de<span class="accent">.</span>me</div>
+      <div class="footer-legal" style="margin-top: 8px;">
+        © 2026 Forma Kevin — All rights reserved<br>
+        BCE 0697.861.253 · Brussels, Belgium
+      </div>
+      <div class="footer-vat">VAT not applicable (Art. 56bis Belgian VAT Code)</div>
+    </div>
+    <div class="footer-links">
+      <a href="/en/legal-notice.html">Legal notice</a>
+      <a href="/en/privacy.html">Privacy</a>
+      <a href="/en/terms.html">Terms</a>
+      <a href="/en/cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
