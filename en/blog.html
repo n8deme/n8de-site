@@ -927,29 +927,48 @@ h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 500; }
   // ====== NEWSLETTER ======
   // *** TO CONFIGURE ***
   // Replace with your webhook (Brevo list, n8n, Zapier). Empty = mailto fallback.
-  const NEWSLETTER_WEBHOOK = '';
+  const NEWSLETTER_WEBHOOK = 'https://n8n.n8de.me/webhook/newsletter-signup';
 
   const nlForm = document.getElementById('newsletterForm');
   const nlSuccess = document.getElementById('newsletterSuccess');
+  const nlButton = nlForm.querySelector('button[type="submit"]');
+  
   nlForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('newsletterEmail').value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
 
+    // Disable button + loading state
+    nlButton.disabled = true;
+    const originalText = nlButton.textContent;
+    nlButton.textContent = '...';
+
     try {
-      if (NEWSLETTER_WEBHOOK) {
-        await fetch(NEWSLETTER_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source: 'n8de.me/blog', timestamp: new Date().toISOString() })
-        });
+      const response = await fetch(NEWSLETTER_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          email: email, 
+          source: 'n8de.me/en/blog', 
+          timestamp: new Date().toISOString() 
+        })
+      });
+
+      if (response.ok) {
+        // Success — show success message
+        nlForm.style.display = 'none';
+        nlSuccess.classList.add('show');
+      } else {
+        // Server error
+        nlButton.disabled = false;
+        nlButton.textContent = originalText;
+        alert('Erreur. Réessayez dans un instant.');
       }
-      nlForm.style.display = 'none';
-      nlSuccess.classList.add('show');
     } catch (err) {
-      // Silently ignore for now — user gets no feedback on network error
-      nlForm.style.display = 'none';
-      nlSuccess.classList.add('show');
+      // Network error
+      nlButton.disabled = false;
+      nlButton.textContent = originalText;
+      alert('Erreur réseau. Vérifiez votre connexion.');
     }
   });
 </script>
