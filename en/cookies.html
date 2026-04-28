@@ -38,6 +38,13 @@ a:hover { color: var(--orange-soft); text-decoration: underline; }
 .nav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); display: inline-flex; align-items: center; gap: 8px; }
 .nav-back:hover { color: var(--orange); text-decoration: none; }
 
+
+/* Logo styles */
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo-img { height: 32px; width: auto; display: block; }
+.footer-brand-wrapper { display: flex; align-items: center; gap: 12px; }
+.footer-brand-img { height: 48px; width: auto; display: block; }
+
 .container { max-width: var(--maxw); margin: 0 auto; padding: clamp(60px, 10vw, 120px) var(--pad); }
 
 .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
@@ -97,7 +104,7 @@ li { margin-bottom: 8px; line-height: 1.7; }
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/en/" class="nav-logo">n8de<span class="accent">.</span>me</a>
+    <a href="/en/" class="nav-logo"><img src="/assets/logo.png" alt="n8de.me" class="nav-logo-img" />n8de<span class="accent">.</span>me</a>
     <a href="/en/" class="nav-back">← Back</a>
   </div>
 </nav>
@@ -243,7 +250,7 @@ li { margin-bottom: 8px; line-height: 1.7; }
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">n8de<span class="accent">.</span>me</div>
+      <div class="footer-brand-wrapper"><img src="/assets/logo.png" alt="n8de.me" class="footer-brand-img" /><div class="footer-brand">n8de<span class="accent">.</span>me</div></div>
       <div class="footer-legal" style="margin-top: 8px;">
         © 2026 Forma Kevin — All rights reserved<br>
         BCE 0697.861.253 · Brussels, Belgium
